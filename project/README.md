@@ -37,8 +37,17 @@ Later on, we can fetch additional information from the whole data set.
 
 
 # A list of internal milestones up until project milestone 2
-Add here a sketch of your planning for the next project milestone.
+**10.11.2017**: Fetch all needed data
 
+**17.11.2017**: Clean data and get the features we are interested in
+
+**28.11.2017**: Submit the data collection with descriptive analysis
+
+**11.12.2017**: State relevant conclusions and start the blog design
+
+**19.12.2017**: Submit the report
+
+**29.12.2017**: Submit the project
 
 # Questions for TAa
 Add here some questions you have for us, in general or project-specific.
