@@ -12,14 +12,13 @@ We will use the dataset from MillionSongDB, coupled with some website such as Th
 
 
 # Research questions
-A list of research questions you would like to address during the project. 
 
-Which features did change (e.g. bpm, beats)?  
-How did genres change (e.g. popularity, features of specific genres, higher variance)?  
-How did the distribution of music change (e.g. change of number of genres, variance of features)?  
-Which songs from the past are still trending (why)?  
-How did song titles (artist names) change over time?  
-Where did (which) songs get released at which time (do dependencies exist between similar Songs)?  
+- Which features did change (e.g. bpm, beats)?
+- How did genres change (e.g. popularity, features of specific genres, higher variance)?
+- How did the distribution of music change (e.g. change of number of genres, variance of features)?
+- Which songs from the past are still trending (why)?
+- How did song titles (artist names) change over time?
+- Where did (which) songs get released at which time (do dependencies exist between similar Songs)?
 
 # Dataset
 We want to use the dataset from MillionSong DB.  
