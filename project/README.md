@@ -2,8 +2,6 @@
 Evolution in music through the years.
 
 # Abstract
-A 150 word description of the project idea, goals, dataset used.
-What story you would like to tell and why? What's the motivation behind your project?
 
 The music world is constantly increasing with lot of songs published everyday from all over the world. Moreover, the world is becoming more connected and this helps to spread music popularity. We want to understand how music popularity evolved in the last roughly 60 years, as music is a really important social factor. People express themselves, and lot of cultural events and customs are derived from it.
 This popularity could help explain some movements influence, the creation of some music styles and what makes a song popular.
@@ -64,6 +62,5 @@ Later on, we can fetch additional information from the whole data set.
 **29.01.2018**: Create poster, demo of visualisation
 
 # Questions for TAa
-Add here some questions you have for us, in general or project-specific.
 
 Is there a possibility to convert IDs from the dataset to Spotify URNs?
