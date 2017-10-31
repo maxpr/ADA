@@ -40,21 +40,21 @@ Later on, we can fetch additional information from the whole data set.
 
 **03.11.2017**: Prepare subdataset locally
 
-**05.11.2017**: Analyse additional files
+**05.11.2017**: Analysed additional files
 
-**10.11.2017**: Fetch info from dataset and APIs
+**10.11.2017**: Fetched data from subdataset and APIs, create functions for additional data collection
 
-**17.11.2017**: Functions for analysing subdataset
+**17.11.2017**: Functions created for explanatory data analysis on subdataset
 
-**19.11.2017**: Prepare complete dataset on cluster
+**19.11.2017**: Prepared complete dataset on cluster
 
-**24.11.2017**: Apply functions for whole dataset
+**24.11.2017**: Applyed created functions on whole dataset, do needed modifications
 
-**26.11.2017**: Extend functions for whole dataset
+**26.11.2017**: Extended functions and analysis for whole dataset, prelimiary result
 
-**28.11.2017**: Recheck prelimiary result
+**28.11.2017**: Rechecked prelimiary result, updated plan
 
-**03.12.2017**: State relevant conclusions
+**03.12.2017**: Relevant conclusions drawn
 
 **08.12.2017**: First blog design
 
