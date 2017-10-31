@@ -22,11 +22,18 @@ It consist of .h5 files containing song, classified in different subfolders.
 For each .h5 files, we can use the method given in the hdf5_getters provided by the website to extract useful information.
 The most important one is the .get_num_song(file) that return the number of rows in the actual files, then you can get lot of information on the artists, songs, etc.
 These are the field that could be exploited https://labrosa.ee.columbia.edu/millionsong/faq [Second div].
+Furthermore a few additional files can be bundled via offered scripts (longitude, similarities, year).
+Genres are called "terms" in the dataset. The genres of an artist can be fetched from the field "artist terms". Or from one of the additinal files.
+There are several features which have been calculated with algorithms: bpm ("tempo"), dancabilty, duration, ...
 Possibly further facts can be retrieved from the Spotify API since the Echo Nest API is shut down.
+Since the dataset is quite large and we will start to look at the additional files to get as much as we can.
+Furthermore, a subset exits, which we can use for first tests.
+Later on, we can fetch additional information from the whole data set.
+
 
 # A list of internal milestones up until project milestone 2
 Add here a sketch of your planning for the next project milestone.
 
 # Questions for TAa
 Add here some questions you have for us, in general or project-specific.
-Is there a possibility to convert Echo Nest IDs to Spotify URNs?
+Is there a possibility to convert IDs from the dataset to Spotify URNs?
