@@ -1,0 +1,13 @@
+Week1: Reading the paper taking notes to understand and ask questions
+Week2: Set up the problems with Go ( path and GCC as using C shit in the Prio Code), finally go on VM
+Week3: Discovery of cotohrity tmeplate and how it works, implementation of basic sum cipher
+Week4: Sum cipher really well done, done verification, ciphers and also simul
+Begin plotting time
+Week5: Plotting done now try implementation of the proof , difficult
+Week6: First Function from SNIPs proofs, still not working but the method of thinking is there and we can go little by little
+
+Week7: Finally working SNIPs proof, some problems from unknown cause. But most of the code is implemented. Writting of beginning of report and also slides for project presentation
+
+Week8: Change the protocol to Aggregate the sum, now do it from share directly. Synchro problem solved only technical never happens in real case.
+
+Week9: Redo the simulation, splitting sum cipher into 2 protocols, verif and aggregation, fully functionnal

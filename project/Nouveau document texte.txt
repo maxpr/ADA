@@ -1,0 +1,47 @@
+For question concerning evolution of features, do some plot group by years to see if there is some tendencies in the datas.
+
+Then do the same for genre, plot different statistics like popularity, look from which year each genre were from. Look at the variance to see if sub-genre in one genre is taking more place throught the years.
+
+Maybe train a classifier for song in the last 5 years and apply to the whole data set to see in which genre each song will be classified.
+
+Look at the feature that correlate the more with popularity. Maybe do propensity score.
+
+Do a clustering of song and comparison from inside these clusters.
+
+Do feature analysis by removing analysis, over year, for example BPM over year boxplot to see how it change by mean, quantiles, also variance and try to infer from this an evolution through the years.
+
+
+IDEA FROM A FRIEND:
+
+compare song name or artist name, by hashing with this code :
+func Hash64(s string, seed uint64) uint64
+func PopCountUint64(x uint64) int
+
+func OneBitMinHash(set []string, N_BITS int) []uint64 {
+  code := make([]uint64, N_BITS/64)
+  var minhash_value uint64
+  for bitnum := 0; bitnum < N_BITS; bitnum++ {
+    minhash_value = math.MaxUint64
+    for _, s := range set {
+      minhash_tmp := Hash64(s, uint64(bitnum)) // bitnum as seed
+      if minhash_tmp < minhash_value {
+        minhash_value = minhash_tmp
+      }
+    }
+    whichword := bitnum / 64   // which uint64 in the slice?
+    whichbit := bitnum % 64    // which bit in the uint64?
+    if minhash_value&0x1 > 0 { // is the bit set?
+      code[whichword] = code[whichword] | (1 << uint8(whichbit))
+    }
+  }
+  return code
+}
+
+func JaccardSim_OneBitMinHash(codeA []uint64, codeB []uint64) float64 {
+  var hamming int
+  N_BITS := len(codeA) * 64
+  for i, a := range codeA {
+    hamming += PopCountUint64(a ^ codeB[i])
+  }
+  return 1.0 - 2.0*float64(hamming)/float64(N_BITS)
+}
