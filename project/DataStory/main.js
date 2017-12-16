@@ -7,25 +7,169 @@ $(function() {
     .attr('id', 'chart-tempo')
     .attr('height', 200);
 
-  let years = Array(50).fill().map((v, i) => i + 1960);
-
   let chartTempoCanvas = document.getElementById('chart-tempo');
-  let chartTempo = new Chart(chartTempoCanvas, {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [{
-          label: 'Average Song Tempo Smoothed',
-          data: [115.07696533, 115.11660767, 115.02072144, 114.93606567, 114.96435547, 115.16894531, 115.58045959, 116.20324707, 117.02008057, 117.99760437, 119.09152222, 120.25030518, 121.41947937, 122.5453186, 123.57736206, 124.47183228, 125.19233704, 125.71292114, 126.01768494, 126.10206604, 125.97273254, 125.64674377, 125.15078735, 124.52020264, 123.79624939, 123.02494812, 122.25445557, 121.53199768, 120.90193176, 120.40310669, 120.06539917, 119.90820312, 119.93843079, 120.14927673, 120.51853943, 121.00996399, 121.57395935, 122.1502533, 122.6723938, 123.07336426, 123.29414368, 123.29478455, 123.06689453, 122.65180969, 122.15919495, 121.79283142, 121.87960815, 122.90161133, 125.53738403, 130.70689392, 139.62309265]
-        },
-        {
-          label: 'Average Song Tempo',
-          showLine: false,
-          data: [115.1505, 113.8395, 117.2895, 114.484, 113.7555, 116.4235, 115.864, 115.8485, 114.5555, 116.579, 122.217, 122.15, , 121.838, 122.658, 121.992, 121.501, 126.314, 125.154, 125.909, 126.2675, 128.947, 126.3235, 125.572, 124.045, 123.319, 122.482, 121.998, 119.975, 119.957, 119.912, 119.85, , 120.3275, 119.8375, 122.2455, 122.253, 121.403, 122.3495, 122.6005, 121.5775, 121.712, 122.202, 122.127, 121.889, 122.087, 123.005, 123.9495, 124.057, 124.8405, 124.011, 124.984, 143.005]
+  $.ajax({
+    url:"data/SongTempoMean.txt",
+    dataType: 'json',
+    mimeType: "application/json",
+    success:function(data){
+      for (let i=0; i< data.length; i++){
+        data[i] = JSON.parse(data[i]);
+      }
+
+      console.log(data);
+
+      let chartData = {
+        labels: data[0].years,
+        datasets: []
+      };
+
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].genre === "All"){
+          let genreData = {
+            label: "Mean Song Tempo Smoothed",
+            data: data[i].fit,
+            fill: false,
+            borderColor: '#6a3d9a'
+          };
+          chartData.datasets.push(genreData);
+          genreData = {
+            label: "Mean Song Tempo",
+            data: data[i].points,
+            fill: false,
+            borderColor: '#6a3d9a',
+            showLine: false
+          };
+          chartData.datasets.push(genreData);
         }
-      ]
-    },
-    options: {}
+      }
+
+
+      let chartTempo = new Chart(chartTempoCanvas, {
+        type: 'line',
+        data: chartData,
+        options: {}
+      });
+    }
+  });
+
+  $('#div-loudness').append(document.createElement('canvas'));
+
+  $('#div-loudness canvas')
+    .attr('id', 'chart-loudness')
+    .attr('height', 200);
+
+  let chartLoudnessCanvas = document.getElementById('chart-loudness');
+  $.ajax({
+    url:"data/SongLoudnessMean.txt",
+    dataType: 'json',
+    mimeType: "application/json",
+    success:function(data){
+      for (let i=0; i< data.length; i++){
+        data[i] = JSON.parse(data[i]);
+      }
+
+      console.log(data);
+
+      let chartData = {
+        labels: data[0].years,
+        datasets: []
+      };
+
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].genre === "All"){
+          let genreData = {
+            label: "Mean Song Tempo Smoothed",
+            data: data[i].fit,
+            fill: false,
+            borderColor: '#6a3d9a'
+          };
+          chartData.datasets.push(genreData);
+          genreData = {
+            label: "Mean Song Tempo",
+            data: data[i].points,
+            fill: false,
+            borderColor: '#6a3d9a',
+            showLine: false
+          };
+          chartData.datasets.push(genreData);
+        }
+      }
+
+
+      let chartLoudness = new Chart(chartLoudnessCanvas, {
+        type: 'line',
+        data: chartData,
+        options: {}
+      });
+    }
+  });
+
+  $('#div-genres').append(document.createElement('canvas'));
+
+  $('#div-genres canvas')
+    .attr('id', 'chart-genres')
+    .attr('height', 200);
+
+  let chartGenresCanvas = document.getElementById('chart-genres');
+  $.ajax({
+    url:"data/GenreEvolution.txt",
+    dataType: 'json',
+    mimeType: "application/json",
+    success:function(data){
+
+      console.log(data);
+
+      let chartData = {
+        labels: data.x,
+        datasets: []
+      };
+
+      let color = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']
+
+
+      for (let i = 0; i < data.vals.length; i++) {
+        let genreData = {
+          label: data.vals[i].genre,
+          data: data.vals[i].data,
+          borderColor: color[i],
+          pointHighlightStroke: color[i],
+          backgroundColor: color[i],
+          fill: 'origin'
+        };
+        chartData.datasets.push(genreData);
+      }
+
+
+      let chartGenres = new Chart(chartGenresCanvas, {
+        type: 'line',
+        data: chartData,
+        options: {
+          scales: {
+            yAxes: [{
+              stacked: true,
+              ticks: {max: 1.0}
+            }],
+            xAxes: [{
+              ticks: {min: 1950}
+            }]
+          },
+          elements: { point: {
+             radius: 0,
+              hitRadius: 10,
+               hoverRadius: 10 }
+          },
+          tooltips: {
+            callbacks: {
+              label: function(t, d) {
+                let radius = d.datasets[t.datasetIndex].data[t.index].v
+                return d.datasets[t.datasetIndex].label + ": " + (t.yLabel*100).toFixed(2) + '%';
+              }
+           }
+          }
+        }
+      });
+    }
   });
 
   $('#div-genres-duration-Mean').append(document.createElement('canvas'));
