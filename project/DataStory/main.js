@@ -284,7 +284,7 @@ $(function() {
       }
 
 
-      let chartGenresTempoMean = new Chart(chartGenresTempoMinMaxCanvas, {
+      let chartGenresTempoMinMax = new Chart(chartGenresTempoMinMaxCanvas, {
         type: 'line',
         data: chartData,
         options: {}
