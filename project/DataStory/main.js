@@ -30,8 +30,8 @@ $(function() {
           data[i].points.splice(-1,1);
         }
       }
-      dataDuration = data.slice();
-      drawTempoChart(dataDuration);
+      dataTempo = data.slice();
+      drawTempoChart(dataTempo);
 
       $('#SliderTempo').ionRangeSlider({
         type: "single",
@@ -48,7 +48,7 @@ $(function() {
   function sliderTempChange(sliderData){
     let year = sliderData.from;
     let yearIndex = year-1961;
-    let data = JSON.parse(JSON.stringify(dataDuration));
+    let data = JSON.parse(JSON.stringify(dataTempo));
     for (let i=0; i< data.length; i++){
       for (let j=2008-1961; j > yearIndex; j--){
         data[i].fit.splice(-1,1);
@@ -381,6 +381,119 @@ $(function() {
       });
     }
   });
+
+  $('#div-genres-time').append(document.createElement('canvas'));
+
+  $('#div-genres-time canvas')
+    .attr('id', 'chart-genres-time')
+    .attr('height', 200);
+
+  let dataGenresTime;
+  let chartGenresTime;
+
+  let chartGenresTimeCanvas = document.getElementById('chart-genres-time');
+  $.ajax({
+    url:"data/GenreEvolution.txt",
+    dataType: 'json',
+    mimeType: "application/json",
+    success:function(data){
+      for (let j= 0; j < 3; j++){
+        data.x.splice(-1,1);
+      }
+      console.log(data);
+      dataGenresTime = data;
+
+      drawChartGenresTime(getYearValues(2008));
+
+      $('#SliderGenres').ionRangeSlider({
+        type: "single",
+        min: 1961,
+        max: 2008,
+        from: 2008,
+        hide_min_max: true,
+        prettify_enabled: false,
+        onChange: sliderGenreChange
+      });
+    }
+  });
+
+  function getYearValues(year){
+      let yearIndex;
+      for (let i = 0; i < dataGenresTime.x.length; i++ ){
+        if (year === dataGenresTime.x[i]){
+          yearIndex = i;
+          break;
+        }
+      }
+
+      let labels = [];
+      let data = [];
+      for (let i = 0; i < dataGenresTime.vals.length; i++ ){
+        labels.push(dataGenresTime.vals[i].genre);
+        data.push(dataGenresTime.vals[i].data[yearIndex]);
+      }
+      return {labels: labels, data:data};
+  }
+
+  function sliderGenreChange(sliderData){
+    let year = sliderData.from;
+    let yearIndex = year-1961;
+
+    drawChartGenresTime(getYearValues(year));
+
+      if (year > 2000){
+        $('#div-genres-descr').html("Description for after 2000");
+      } else if (year > 1970){
+        $('#div-genres-descr').html("Description for after 1970");
+      } else {
+        $('#div-genres-descr').html("Description for beginning");
+      }
+  }
+
+  function drawChartGenresTime(data){
+    let color = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']
+
+
+    let chartData = {
+      labels: data.labels,
+      datasets: [{
+        label: "% of Songs",
+        data: data.data,
+        backgroundColor: color
+      }]
+    };
+
+
+    if (chartGenresTime){
+      chartGenresTime.destroy();
+    }
+    chartGenresTime = new Chart(chartGenresTimeCanvas, {
+      type: 'horizontalBar',
+      data: chartData,
+      options: {
+        scales: {
+          yAxes: [{
+          }],
+          xAxes: [{
+          }]
+        },
+        elements: { point: {
+           radius: 0,
+            hitRadius: 4,
+             hoverRadius: 4 }
+        },
+        tooltips: {
+          callbacks: {
+            label: function(t, d) {
+              let radius = d.datasets[t.datasetIndex].data[t.index].v
+              return d.datasets[t.datasetIndex].label + ": " + (t.yLabel*100).toFixed(2) + '%';
+            }
+         }
+       },
+       animation: false
+      }
+    });
+  }
 
   let years = []
   for (let year = 1961; year < 2012; year++){
