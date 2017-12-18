@@ -475,18 +475,14 @@ $(function() {
           yAxes: [{
           }],
           xAxes: [{
+            ticks: {max: 0.3}
           }]
-        },
-        elements: { point: {
-           radius: 0,
-            hitRadius: 4,
-             hoverRadius: 4 }
         },
         tooltips: {
           callbacks: {
             label: function(t, d) {
-              let radius = d.datasets[t.datasetIndex].data[t.index].v
-              return d.datasets[t.datasetIndex].label + ": " + (t.yLabel*100).toFixed(2) + '%';
+              let radius = d.datasets[t.datasetIndex].data[t.index].v;
+              return d.datasets[t.datasetIndex].label + ": " + (t.xLabel*100).toFixed(2) + '%';
             }
          }
        },
