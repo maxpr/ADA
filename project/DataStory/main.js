@@ -1,6 +1,14 @@
 $(function() {
   console.log("Loaded");
 
+  let dataTempo;
+  let dataLoudness;
+  let dataDuration;
+
+  let chartTempo;
+  let chartLoudness;
+  let chartDuration;
+
   $('#div-tempo').append(document.createElement('canvas'));
 
   $('#div-tempo canvas')
@@ -13,6 +21,7 @@ $(function() {
     dataType: 'json',
     mimeType: "application/json",
     success:function(data){
+
       for (let i=0; i< data.length; i++){
         data[i] = JSON.parse(data[i]);
         for (let j= 0; j < 3; j++){
@@ -21,45 +30,87 @@ $(function() {
           data[i].points.splice(-1,1);
         }
       }
+      dataDuration = data.slice();
+      drawTempoChart(dataDuration);
 
-      console.log(data);
-
-      let chartData = {
-        labels: data[0].years,
-        datasets: []
-      };
-
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].genre === "All"){
-          let genreData = {
-            label: "Mean Song Tempo Smoothed",
-            data: data[i].fit,
-            fill: false,
-            borderColor: '#756bb1',
-            pointRadius:0,
-            pointHitRadius:4,
-            pointHoverRadius:4
-          };
-          chartData.datasets.push(genreData);
-          genreData = {
-            label: "Mean Song Tempo",
-            data: data[i].points,
-            fill: false,
-            borderColor: '#bcbddc',
-            showLine: false
-          };
-          chartData.datasets.push(genreData);
-        }
-      }
-
-
-      let chartTempo = new Chart(chartTempoCanvas, {
-        type: 'line',
-        data: chartData,
-        options: {}
+      $('#SliderTempo').ionRangeSlider({
+        type: "single",
+        min: 1961,
+        max: 2008,
+        from: 2008,
+        hide_min_max: true,
+        prettify_enabled: false,
+        onChange: sliderTempChange
       });
     }
   });
+
+  function sliderTempChange(sliderData){
+    let year = sliderData.from;
+    let yearIndex = year-1961;
+    let data = JSON.parse(JSON.stringify(dataDuration));
+    for (let i=0; i< data.length; i++){
+      for (let j=2008-1961; j > yearIndex; j--){
+        data[i].fit.splice(-1,1);
+        data[i].points.splice(-1,1);
+      }
+    }
+    drawTempoChart(data);
+
+    if (year > 2000){
+      $('#div-tempo-descr').html("Description for after 2000");
+    } else if (year > 1970){
+      $('#div-tempo-descr').html("Description for after 1970");
+    } else {
+      $('#div-tempo-descr').html("Description for beginning");
+    }
+  }
+
+  function drawTempoChart(data){
+
+    let chartData = {
+      labels: data[0].years,
+      datasets: []
+    };
+
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].genre === "All"){
+        let genreData = {
+          label: "Mean Song Tempo Smoothed",
+          data: data[i].fit,
+          fill: false,
+          borderColor: '#756bb1',
+          pointRadius:0,
+          pointHitRadius:4,
+          pointHoverRadius:4
+        };
+        chartData.datasets.push(genreData);
+        genreData = {
+          label: "Mean Song Tempo",
+          data: data[i].points,
+          fill: false,
+          borderColor: '#bcbddc',
+          showLine: false
+        };
+        chartData.datasets.push(genreData);
+      }
+    }
+
+    if (chartTempo){
+      chartTempo.destroy();
+    }
+
+    chartTempo = new Chart(chartTempoCanvas, {
+      type: 'line',
+      data: chartData,
+      options: {scales:{
+        xAxes: [{
+          ticks: {min:1961, max:2008}}],
+        yAxes: [{ticks: {min:112, max:130}}],
+      },
+      animation:false}
+    });
+  }
 
   $('#div-loudness').append(document.createElement('canvas'));
 
@@ -82,44 +133,85 @@ $(function() {
         }
       }
 
-      console.log(data);
+      dataLoudness = data.slice();
+      drawLoudnessChart(dataLoudness);
 
-      let chartData = {
-        labels: data[0].years,
-        datasets: []
-      };
-
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].genre === "All"){
-          let genreData = {
-            label: "Mean Song Loudness Smoothed",
-            data: data[i].fit,
-            fill: false,
-            borderColor: '#756bb1',
-            pointRadius:0,
-            pointHitRadius:4,
-            pointHoverRadius:4
-          };
-          chartData.datasets.push(genreData);
-          genreData = {
-            label: "Mean Song Loudness",
-            data: data[i].points,
-            fill: false,
-            borderColor: '#bcbddc',
-            showLine: false
-          };
-          chartData.datasets.push(genreData);
-        }
-      }
-
-
-      let chartLoudness = new Chart(chartLoudnessCanvas, {
-        type: 'line',
-        data: chartData,
-        options: {}
+      $('#SliderLoudness').ionRangeSlider({
+        type: "single",
+        min: 1961,
+        max: 2008,
+        from: 2008,
+        hide_min_max: true,
+        prettify_enabled: false,
+        onChange: sliderLoudnessChange
       });
     }
   });
+
+  function sliderLoudnessChange(sliderData){
+    let year = sliderData.from;
+    let yearIndex = year-1961;
+    let data = JSON.parse(JSON.stringify(dataLoudness));
+    for (let i=0; i< data.length; i++){
+      for (let j=2008-1961; j > yearIndex; j--){
+        data[i].fit.splice(-1,1);
+        data[i].points.splice(-1,1);
+      }
+    }
+    drawLoudnessChart(data);
+
+    if (year > 2000){
+      $('#div-loudness-descr').html("Description for after 2000");
+    } else if (year > 1970){
+      $('#div-loudness-descr').html("Description for after 1970");
+    } else {
+      $('#div-loudness-descr').html("Description for beginning");
+    }
+  }
+
+  function drawLoudnessChart(data){
+    let chartData = {
+      labels: data[0].years,
+      datasets: []
+    };
+
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].genre === "All"){
+        let genreData = {
+          label: "Mean Song Loudness Smoothed",
+          data: data[i].fit,
+          fill: false,
+          borderColor: '#756bb1',
+          pointRadius:0,
+          pointHitRadius:4,
+          pointHoverRadius:4
+        };
+        chartData.datasets.push(genreData);
+        genreData = {
+          label: "Mean Song Loudness",
+          data: data[i].points,
+          fill: false,
+          borderColor: '#bcbddc',
+          showLine: false
+        };
+        chartData.datasets.push(genreData);
+      }
+    }
+
+    if (chartLoudness){
+      chartLoudness.destroy();
+    }
+    chartLoudness = new Chart(chartLoudnessCanvas, {
+      type: 'line',
+      data: chartData,
+      options: {scales:{
+        xAxes: [{ticks: {min:1961, max:2008}}],
+        yAxes: [{ticks: {min:-13, max:-7}}],
+      },
+      animation: false
+    }
+    });
+  }
 
   $('#div-duration').append(document.createElement('canvas'));
 
@@ -142,9 +234,44 @@ $(function() {
         }
       }
 
-      console.log(data);
+      dataDuration = data.slice();
+      drawDurationChart(dataDuration);
 
-      let chartData = {
+      $('#SliderDuration').ionRangeSlider({
+        type: "single",
+        min: 1961,
+        max: 2008,
+        from: 2008,
+        hide_min_max: true,
+        prettify_enabled: false,
+        onChange: sliderDurationChange
+      });
+    }
+  });
+
+  function sliderDurationChange(sliderData){
+    let year = sliderData.from;
+    let yearIndex = year-1961;
+    let data = JSON.parse(JSON.stringify(dataDuration));
+    for (let i=0; i< data.length; i++){
+      for (let j=2008-1961; j > yearIndex; j--){
+        data[i].fit.splice(-1,1);
+        data[i].points.splice(-1,1);
+      }
+    }
+    drawDurationChart(data);
+
+    if (year > 2000){
+      $('#div-duration-descr').html("Description for after 2000");
+    } else if (year > 1970){
+      $('#div-duration-descr').html("Description for after 1970");
+    } else {
+      $('#div-duration-descr').html("Description for beginning");
+    }
+  }
+
+  function drawDurationChart(data){
+    let chartData = {
         labels: data[0].years,
         datasets: []
       };
@@ -176,10 +303,14 @@ $(function() {
       let chartDuration = new Chart(chartDurationCanvas, {
         type: 'line',
         data: chartData,
-        options: {}
+        options: {scales:{
+          xAxes: [{ticks: {min:1961, max:2008}}],
+          yAxes: [{ticks: {min:160, max:240}}],
+          },
+          animation: false
+        }
       });
-    }
-  });
+  }
 
   $('#div-genres').append(document.createElement('canvas'));
 
