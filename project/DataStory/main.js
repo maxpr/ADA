@@ -15,6 +15,11 @@ $(function() {
     success:function(data){
       for (let i=0; i< data.length; i++){
         data[i] = JSON.parse(data[i]);
+        for (let j= 0; j < 3; j++){
+          data[i].years.splice(-1,1);
+          data[i].fit.splice(-1,1);
+          data[i].points.splice(-1,1);
+        }
       }
 
       console.log(data);
@@ -30,14 +35,17 @@ $(function() {
             label: "Mean Song Tempo Smoothed",
             data: data[i].fit,
             fill: false,
-            borderColor: '#6a3d9a'
+            borderColor: '#756bb1',
+            pointRadius:0,
+            pointHitRadius:4,
+            pointHoverRadius:4
           };
           chartData.datasets.push(genreData);
           genreData = {
             label: "Mean Song Tempo",
             data: data[i].points,
             fill: false,
-            borderColor: '#6a3d9a',
+            borderColor: '#bcbddc',
             showLine: false
           };
           chartData.datasets.push(genreData);
@@ -67,6 +75,11 @@ $(function() {
     success:function(data){
       for (let i=0; i< data.length; i++){
         data[i] = JSON.parse(data[i]);
+        for (let j= 0; j < 3; j++){
+          data[i].years.splice(-1,1);
+          data[i].fit.splice(-1,1);
+          data[i].points.splice(-1,1);
+        }
       }
 
       console.log(data);
@@ -79,17 +92,20 @@ $(function() {
       for (let i = 0; i < data.length; i++) {
         if (data[i].genre === "All"){
           let genreData = {
-            label: "Mean Song Tempo Smoothed",
+            label: "Mean Song Loudness Smoothed",
             data: data[i].fit,
             fill: false,
-            borderColor: '#6a3d9a'
+            borderColor: '#756bb1',
+            pointRadius:0,
+            pointHitRadius:4,
+            pointHoverRadius:4
           };
           chartData.datasets.push(genreData);
           genreData = {
-            label: "Mean Song Tempo",
+            label: "Mean Song Loudness",
             data: data[i].points,
             fill: false,
-            borderColor: '#6a3d9a',
+            borderColor: '#bcbddc',
             showLine: false
           };
           chartData.datasets.push(genreData);
@@ -98,6 +114,66 @@ $(function() {
 
 
       let chartLoudness = new Chart(chartLoudnessCanvas, {
+        type: 'line',
+        data: chartData,
+        options: {}
+      });
+    }
+  });
+
+  $('#div-duration').append(document.createElement('canvas'));
+
+  $('#div-duration canvas')
+    .attr('id', 'chart-duration')
+    .attr('height', 200);
+
+  let chartDurationCanvas = document.getElementById('chart-duration');
+  $.ajax({
+    url:"data/DurationMean.txt",
+    dataType: 'json',
+    mimeType: "application/json",
+    success:function(data){
+      for (let i=0; i< data.length; i++){
+        data[i] = JSON.parse(data[i]);
+        for (let j= 0; j < 3; j++){
+          data[i].years.splice(-1,1);
+          data[i].fit.splice(-1,1);
+          data[i].points.splice(-1,1);
+        }
+      }
+
+      console.log(data);
+
+      let chartData = {
+        labels: data[0].years,
+        datasets: []
+      };
+
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].genre === "All"){
+          let genreData = {
+            label: "Mean Song Duration Smoothed",
+            data: data[i].fit,
+            fill: false,
+            borderColor: '#756bb1',
+            pointRadius:0,
+            pointHitRadius:4,
+            pointHoverRadius:4
+          };
+          chartData.datasets.push(genreData);
+          genreData = {
+            label: "Mean Song Duration",
+            data: data[i].points,
+            fill: false,
+            borderColor: '#bcbddc',
+            showLine: false
+          };
+          chartData.datasets.push(genreData);
+        }
+      }
+
+
+      let chartDuration = new Chart(chartDurationCanvas, {
         type: 'line',
         data: chartData,
         options: {}
@@ -117,7 +193,9 @@ $(function() {
     dataType: 'json',
     mimeType: "application/json",
     success:function(data){
-
+      for (let j= 0; j < 3; j++){
+        data.x.splice(-1,1);
+      }
       console.log(data);
 
       let chartData = {
@@ -129,6 +207,7 @@ $(function() {
 
 
       for (let i = 0; i < data.vals.length; i++) {
+        data.vals[i].data.splice(-1,1);
         let genreData = {
           label: data.vals[i].genre,
           data: data.vals[i].data,
@@ -156,8 +235,8 @@ $(function() {
           },
           elements: { point: {
              radius: 0,
-              hitRadius: 10,
-               hoverRadius: 10 }
+              hitRadius: 4,
+               hoverRadius: 4 }
           },
           tooltips: {
             callbacks: {
@@ -172,93 +251,10 @@ $(function() {
     }
   });
 
-  $('#div-genres-duration-Mean').append(document.createElement('canvas'));
-
-  $('#div-genres-duration-Mean canvas')
-    .attr('id', 'chart-genres-dur-mean')
-    .attr('height', 200);
-  let chartGenresDurationMeanCanvas = document.getElementById('chart-genres-dur-mean');
-
-  $.ajax({
-    url:"data/DurationMean.txt",
-    dataType: 'json',
-    mimeType: "application/json",
-    success:function(data){
-      for (let i=0; i< data.length; i++){
-        data[i] = JSON.parse(data[i]);
-      }
-
-      console.log(data);
-
-      let chartData = {
-        labels: data[0].years,
-        datasets: []
-      };
-
-      let color = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']
-
-      for (let i = 0; i < data.length; i++) {
-        let genreData = {
-          label: data[i].genre,
-          data: data[i].fit,
-          fill: false,
-          borderColor: color[i]
-        };
-        chartData.datasets.push(genreData);
-      }
-
-
-      let chartGenresTempoMean = new Chart(chartGenresDurationMeanCanvas, {
-        type: 'line',
-        data: chartData,
-        options: {}
-      });
-    }
-  });
-
-  $('#div-genres-duration-MinMax').append(document.createElement('canvas'));
-
-  $('#div-genres-duration-MinMax canvas')
-    .attr('id', 'chart-genres-dur-MinMax')
-    .attr('height', 200);
-  let chartGenresDurationMinMaxCanvas = document.getElementById('chart-genres-dur-MinMax');
-
-  $.ajax({
-    url:"data/DurationMaxMin.txt",
-    dataType: 'json',
-    mimeType: "application/json",
-    success:function(data){
-      for (let i=0; i< data.length; i++){
-        data[i] = JSON.parse(data[i]);
-      }
-
-      console.log(data);
-
-      let chartData = {
-        labels: data[0].years,
-        datasets: []
-      };
-
-      let color = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']
-
-      for (let i = 0; i < data.length; i++) {
-        let genreData = {
-          label: data[i].genre,
-          data: data[i].fit,
-          fill: false,
-          borderColor: color[i]
-        };
-        chartData.datasets.push(genreData);
-      }
-
-
-      let chartGenresTempoMean = new Chart(chartGenresDurationMinMaxCanvas, {
-        type: 'line',
-        data: chartData,
-        options: {}
-      });
-    }
-  });
+  let years = []
+  for (let year = 1961; year < 2012; year++){
+    years.push(year);
+  }
 
   $('#div-genres-loudness-Mean').append(document.createElement('canvas'));
 
@@ -278,19 +274,41 @@ $(function() {
 
       console.log(data);
 
+
+      let dataYears = years.slice()
+
+      for (let j= 0; j < 3; j++){
+        dataYears.splice(-1,1);
+      }
+
       let chartData = {
-        labels: data[0].years,
+        labels: dataYears,
         datasets: []
       };
 
       let color = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']
 
       for (let i = 0; i < data.length; i++) {
+
+        for (let year = 0; year<years.length; year++){
+          if (data[i].years[year] === years[year]){
+            continue;
+          } else {
+            data[i].years.splice(year,0,year);
+            data[i].fit.splice(year,0,NaN);
+          }
+        }
+
+        for (let j= 0; j < 3; j++){
+          data[i].fit.splice(-1,1);
+        }
+
         let genreData = {
           label: data[i].genre,
           data: data[i].fit,
           fill: false,
-          borderColor: color[i]
+          borderColor: color[i],
+          spanGaps: true
         };
         chartData.datasets.push(genreData);
       }
@@ -299,7 +317,21 @@ $(function() {
       let chartGenresTempoMean = new Chart(chartGenresLoudnessMeanCanvas, {
         type: 'line',
         data: chartData,
-        options: {}
+        options: {
+          elements: { point: {
+             radius: 0,
+              hitRadius: 4,
+               hoverRadius: 4 }
+          },
+          tooltips: {
+            callbacks: {
+              label: function(t, d) {
+                let radius = d.datasets[t.datasetIndex].data[t.index].v
+                return d.datasets[t.datasetIndex].label + ": " + (t.yLabel*100).toFixed(2) + '%';
+              }
+           }
+          }
+        }
       });
     }
   });
@@ -322,19 +354,39 @@ $(function() {
 
       console.log(data);
 
+      let dataYears = years.slice()
+
+      for (let j= 0; j < 3; j++){
+        dataYears.splice(-1,1);
+      }
+
       let chartData = {
-        labels: data[0].years,
+        labels: dataYears,
         datasets: []
       };
 
       let color = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']
 
       for (let i = 0; i < data.length; i++) {
+        for (let year = 0; year<years.length; year++){
+          if (data[i].years[year] === years[year]){
+            continue;
+          } else {
+            data[i].years.splice(year,0,year);
+            data[i].fit.splice(year,0,NaN);
+          }
+        }
+
+        for (let j= 0; j < 3; j++){
+          data[i].fit.splice(-1,1);
+        }
+
         let genreData = {
           label: data[i].genre,
           data: data[i].fit,
           fill: false,
-          borderColor: color[i]
+          borderColor: color[i],
+          spanGaps: true
         };
         chartData.datasets.push(genreData);
       }
@@ -343,7 +395,21 @@ $(function() {
       let chartGenresTempoMean = new Chart(chartGenresLoudnessMinMaxCanvas, {
         type: 'line',
         data: chartData,
-        options: {}
+        options: {
+          elements: { point: {
+             radius: 0,
+              hitRadius: 4,
+               hoverRadius: 4 }
+          },
+          tooltips: {
+            callbacks: {
+              label: function(t, d) {
+                let radius = d.datasets[t.datasetIndex].data[t.index].v
+                return d.datasets[t.datasetIndex].label + ": " + (t.yLabel*100).toFixed(2) + '%';
+              }
+           }
+          }
+        }
       });
     }
   });
@@ -366,19 +432,39 @@ $(function() {
 
       console.log(data);
 
+      let dataYears = years.slice()
+
+      for (let j= 0; j < 3; j++){
+        dataYears.splice(-1,1);
+      }
+
       let chartData = {
-        labels: data[0].years,
+        labels: dataYears,
         datasets: []
       };
 
       let color = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']
 
       for (let i = 0; i < data.length; i++) {
+        for (let year = 0; year<years.length; year++){
+          if (data[i].years[year] === years[year]){
+            continue;
+          } else {
+            data[i].years.splice(year,0,year);
+            data[i].fit.splice(year,0,NaN);
+          }
+        }
+
+        for (let j= 0; j < 3; j++){
+          data[i].fit.splice(-1,1);
+        }
+
         let genreData = {
           label: data[i].genre,
           data: data[i].fit,
           fill: false,
-          borderColor: color[i]
+          borderColor: color[i],
+          spanGaps: true
         };
         chartData.datasets.push(genreData);
       }
@@ -387,7 +473,21 @@ $(function() {
       let chartGenresTempoMean = new Chart(chartGenresTempoMeanCanvas, {
         type: 'line',
         data: chartData,
-        options: {}
+        options: {
+          elements: { point: {
+             radius: 0,
+              hitRadius: 4,
+               hoverRadius: 4 }
+          },
+          tooltips: {
+            callbacks: {
+              label: function(t, d) {
+                let radius = d.datasets[t.datasetIndex].data[t.index].v
+                return d.datasets[t.datasetIndex].label + ": " + (t.yLabel*100).toFixed(2) + '%';
+              }
+           }
+          }
+        }
       });
     }
   });
@@ -410,19 +510,39 @@ $(function() {
 
       console.log(data);
 
+      let dataYears = years.slice()
+
+      for (let j= 0; j < 3; j++){
+        dataYears.splice(-1,1);
+      }
+
       let chartData = {
-        labels: data[0].years,
+        labels: dataYears,
         datasets: []
       };
 
       let color = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a']
 
       for (let i = 0; i < data.length; i++) {
+        for (let year = 0; year<years.length; year++){
+          if (data[i].years[year] === years[year]){
+            continue;
+          } else {
+            data[i].years.splice(year,0,year);
+            data[i].fit.splice(year,0,NaN);
+          }
+        }
+
+        for (let j= 0; j < 3; j++){
+          data[i].fit.splice(-1,1);
+        }
+
         let genreData = {
           label: data[i].genre,
           data: data[i].fit,
           fill: false,
-          borderColor: color[i]
+          borderColor: color[i],
+          spanGaps: true
         };
         chartData.datasets.push(genreData);
       }
@@ -431,7 +551,19 @@ $(function() {
       let chartGenresTempoMinMax = new Chart(chartGenresTempoMinMaxCanvas, {
         type: 'line',
         data: chartData,
-        options: {}
+        options: {elements: { point: {
+           radius: 0,
+            hitRadius: 4,
+             hoverRadius: 4 }
+        },
+        tooltips: {
+          callbacks: {
+            label: function(t, d) {
+              let radius = d.datasets[t.datasetIndex].data[t.index].v
+              return d.datasets[t.datasetIndex].label + ": " + (t.yLabel*100).toFixed(2) + '%';
+            }
+         }
+        }}
       });
     }
   });
