@@ -486,7 +486,8 @@ $(function() {
             }
          }
        },
-       animation: false
+       animation: false,
+       legend: false
       }
     });
   }
