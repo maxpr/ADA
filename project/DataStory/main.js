@@ -378,15 +378,39 @@ $(function() {
           tooltips: {
             callbacks: {
               label: function(t, d) {
-                let radius = d.datasets[t.datasetIndex].data[t.index].v
+                displayGenreDescription(d.datasets[t.datasetIndex].label);
                 return d.datasets[t.datasetIndex].label + ": " + (t.yLabel*100).toFixed(2) + '%';
               }
            }
-          }
+         }
         }
       });
     }
   });
+
+  function displayGenreDescription(genre){
+      if (genre === "ROCK"){
+        $('#div-genres-descr').html('Firstly <b>Rock</b> music since the 1950 has almost only increased with a stability around 20% of the music distribution. It is indeed one of the most popular genre, as band classified as <b>Rock</b> are amoung the most famous ones: The Beatles, The Rolling Stones, Queen , and Red Hot Chilli Peppers for example.');
+      } else if (genre === "POP"){
+        $('#div-genres-descr').html('<b>Pop</b> music has increased a lot between the 70s-80s due to popularity of Disco music and subgenre linked to it. Then it has kept a solid part of the music around 15%.');
+      } else if (genre === "ELECTRONIC" || genre === "DOWNTEMPO"){
+        $('#div-genres-descr').html('<b>Electronic</b> and <b>Downtempo</b> have a really similar evolution, as it due to the digitalisation of the material and music. To be precise <b>Downtempo</b> (or <a href="https://fr.wikipedia.org/wiki/Downtempo">chill-music</a>) is characterized by calmer electronic music, for example <a href="https://www.youtube.com/watch?v=jfFTT3iz740">this artist</a> which is personnaly one of my favourite.'+
+                                      'So both of these genre were not very popular in the early years ( 1950) with less than 5% of the genre, and became more popular from the mid 80s with digitalisation of material and mostly in the begining of the 90s thanks to new technology (synthetisors, software, new songs, science discoveries with sound and waves manipulations), to get to a solid 15% each. Nowadays <b>Downtempo</b> is really popular notably thanks to a sub genre called <b>lofi</b>.');
+      } else if (genre === "REGGAE"){
+        $('#div-genres-descr').html('<b>Reggae</b> music as always been under 10%, but had a pick around 1975-1980, probably because of the apparition of Bob Marley, and its influence around the world.');
+      } else if (genre === "JAZZ" || genre === "BLUES"){
+        $('#div-genres-descr').html('<b>Jazz</b> and <b>Blues</b> also had a similar evolution throught the time. It was widely popular in the 60s with 15% of distribution each. However it decreases widely since nowadays, where it represents only 8% and 5% respectively. It might be because of the influence it had on the other genres and cultural movement. Indeed <b>Jazz</b> and <b>Blues</b> were both created by afro american population in the US in the early 1920s. It is thanks to both this'+
+                                    'music that <b>Rock, Pop</b> and almost all the other genres exist. This is why it is less popular now, even if really big name were doing this type of music ( Ray Charles, Louis Amstrong');
+      } else if (genre === "FOLK"){
+        $('#div-genres-descr').html('<b>Folk</b> music has known a bug peak in 1952 were it was 15% of the music genre. Today it represent only 4% of music distribution. It is associated to <a href="https://en.wikipedia.org/wiki/Contemporary_folk_music">traditional music</a>.'+
+                                    '<b>Folk</b> has also helped the creation of Indi music.');
+      } else if (genre === "METAL"){
+         $('#div-genres-descr').html('<b>Metal</b> music is one of the most special genre here. It was quasi inexistant before the 60s (less than 1.5%) , and then increase to get a 5% part of the genre nowadays. <b>Metal</b> movement has cultural origin in the late 60s in the united Kingdom. It was qualified by heavy distrosion and concentrated on the melodic part of the music with guitar solos and really hard guitar riffs. The major group were : Metallica, Motorhead or Iron Maiden');
+      } else if (genre === "R&B"){
+        $('#div-genres-descr').html('<b>R&B</b> which was around 10% until the 80s and dropped to 5% since this time. It is also an affro American genre from the 40s, which is the genre that gave birth to Rap music. I think our matching did not put enough information into R&B as it is not supposed to decrease so much.');
+      }
+
+  }
 
   $('#div-genres-time').append(document.createElement('canvas'));
 
@@ -446,14 +470,6 @@ $(function() {
     let yearIndex = year-1961;
 
     drawChartGenresTime(getYearValues(year));
-
-      if (year > 2000){
-        $('#div-genres-descr').html("Description for after 2000");
-      } else if (year > 1970){
-        $('#div-genres-descr').html("Description for after 1970");
-      } else {
-        $('#div-genres-descr').html("Description for beginning");
-      }
   }
 
   function drawChartGenresTime(data){
@@ -487,7 +503,7 @@ $(function() {
         tooltips: {
           callbacks: {
             label: function(t, d) {
-              let radius = d.datasets[t.datasetIndex].data[t.index].v;
+              displayGenreDescription(t.yLabel);
               return d.datasets[t.datasetIndex].label + ": " + (t.xLabel*100).toFixed(2) + '%';
             }
          }
