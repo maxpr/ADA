@@ -67,29 +67,29 @@
           <h2>Dataset</h2>
 
           <p>
-            Before going into details, we will give a introduction to the background of this blog post.
-            The analysed dataset consited of ~460.000 Songs. After we cleaned data, the remaining 220.000 songs were analysed.
+            Before going into details, we will introduce the background of this blog post.
+            The analyzed dataset consisted of ~460.000 Songs. After we cleaned data, the remaining 220.000 songs were analyzed.
             The major features used are the following : The tempo, duration, loudness, hotness of Songs and genres and genre weight of artists.
-            Unfortunately interesting features like energy and danceability were not usable from the dataset ( 0 for each song ).
+            Unfortunately, interesting features like energy and danceability were not usable from the dataset ( 0 for each song ).
             For other features like key and rhythm of songs it was not possible to draw meaningful conclusions.
           </p>
 
           <p>
             Presented increases and decreases in this blog post might deviate from the values presented in the charts.
-            The charts present the average features per year, while the change rates have been calculated using confident intervals in order to ensure correctness.
+            The charts present the average features per year, while the change rates have been calculated using confident intervals to ensure correctness.
           </p>
 
           <h2>Evolution of Music in General</h2>
 
           <p>
             In this section, we will concentrate on the evolution of music in general, meaning we did not do difference between genre of music yet.
-            The three most influcenced features by time are tempo, loudness and duration.
+            The three most influenced features by time are tempo, loudness and duration.
           </p>
 
           <h3>Evolution of Tempo</h3>
 
           <p>
-            For the tempo one can notice a seven BPM increase from 1960 to 1980. After 1980 the tempo drops by seven BPMs around 1992. In recent years one can notice a BPM inrease of two BPM
+            For the tempo one can notice a seven BPM increase from 1960 to 1980. After 1980 the tempo drops by seven BPMs around 1992. In recent years one can notice a BPM increase of two BPM
           </p>
 
           <i>
@@ -106,11 +106,11 @@
 
           <p>
             <b>Loudness</b> is defined as <a href="https://en.wikipedia.org/wiki/Loudness">follow</a> : "That
-            attribute of auditory sensation in terms of which sounds can be ordered on a scale extending from quiet to loud.", or more theoritically, it is the subjective perception of <a href="https://en.wikipedia.org/wiki/Sound_pressure">sound pressure</a>.
+            attribute of auditory sensation in terms of which sounds can be ordered on a scale extending from quiet to loud.", or more theoretically, it is the subjective perception of <a href="https://en.wikipedia.org/wiki/Sound_pressure">sound pressure</a>.
           </p>
 
           <p>
-            One can definetly notice a steep increase of loudness of 5 dB.
+            One can notice a steep increase of loudness of 5 dB.
             The steepest point of the curve is in the 90s, during the <a href="https://en.wikipedia.org/wiki/Loudness_war"><b>Loudness War</b></a>
           </p>
 
@@ -129,7 +129,7 @@
             <p>
               For the song duration one can notice a very steep increase in the 60s and 70s.
               During those years the song Duration increased by almost one minute.
-              After the 70s the duration still kept increasing until the 2000s, when the duration started to decrease.
+              After the 70s the duration kept increasing until the 2000s, when the duration started to decrease.
             </p>
 
             <i>
@@ -149,12 +149,12 @@
                  We can clearly see the trending genres moving with the time.</p>
 
                <i>
-                 Hover over the lines in the chart in order to display descriptions for each genre.
+                 Hover over the lines in the chart to display descriptions for each genre.
                </i>
 
 This evolution can be correlated to the popularity of a genre, as the more % it is, the more popular it is supposed to be (else it would not have been released)
 
-Also the Genre matching was done ourselves to reduce main genre to 14 genres. We used a Json found a website to reduce all the different tags to 28 genres, that we also reduce to the main 14 genres. The original tags were very variated and we treat almost 350 subgenres.</p>
+Also, the Genre matching was done ourselves to reduce main genre to 14 genres. We used a Json found a website to reduce all the different tags to 28 genres, that we also reduce to the main 14 genres. The original tags were very variated, and we treat almost 350 subgenres.</p>
               <div id="div-genres"> </div>
 
               <div id="div-genres-descr"></div>
@@ -164,10 +164,10 @@ Also the Genre matching was done ourselves to reduce main genre to 14 genres. We
 
               <br/>
 			<h3>What we can infer</h3>
-			<p>From this we can understand the popularity of some old time such as <b>Jazz, Blues or Folk</b> has greatly reduce since the begining of the 20 th century. This is due to the apparition of new genre based on this previous one.
-			Also cultural movement or apparition of some famous people increased the popularity of a genre with the example of Bob Marley for the <b>Reggae</b> or the rise of <b>Metal/ Heavy-Metal</b> in the late 70s. And finally the technological advance have helped some genre such as <b>Electronic</b> to spread faster and take 
+			<p>From this we can understand the popularity of some old time such as <b>Jazz, Blues or Folk</b> has greatly reduce since the beginning of the 20th century. This is due to the apparition of new genre based on this previous one.
+			Also, cultural movement or apparition of some famous people increased the popularity of a genre with the example of Bob Marley for the <b>Reggae</b> or the rise of <b>Metal/ Heavy-Metal</b> in the late 70s. And finally, the technological advance has helped some genre such as <b>Electronic</b> to spread faster and take
 			a place in this genre population.</p>
-			
+
               <h2>Evolution of specific Genres</h2>
 
               <p>
@@ -175,31 +175,45 @@ Also the Genre matching was done ourselves to reduce main genre to 14 genres. We
               </p>
 
               <h3>Evolution of Loudness</h3>
-              <p>The evolution of Loudness by genre clarifies our observation of Loudness War shown in the previous plots. Indeed there is a clear augmentation of loudness, with a clear higher change for metal, that might be due to the use of distorsion and
+              <p>The evolution of Loudness by genre clarifies our observation of Loudness War shown in the previous plots. Indeed, there is a clear augmentation of loudness, with a clear higher change for metal, that might be due to the use of distortion and
                 other procedure that increase the song force. We can however see 3 genres that are less affected which are
-                <b>Folk,Blues and Jazz</b>. This should be due to the accoustic nature of these genre as it does not use as much electronical material as the other genres.</p>
+                <b>Folk, Blues and Jazz</b>. This should be due to the acoustic nature of these genre as it does not use as much electronical material as the other genres.</p>
               <h4>Mean</h4>
               <div id="div-genres-loudness-Mean"> </div>
-              <p>Don't know what to say</p>
-			We have not found matching events or information for this regrouping, but there are some interesting fact to notice. <b>Downtempo and Electronic</b> has a really linear increased, mostly due to their close relationship with technologic discovery. And also, <b>Metal and Reggae</b> were the one with the lowest variation
-			, it might be linked to the fact that it <b>Metal</b> appeared later than the other genre and used a high Loudness since the beginning and <b>Reggae</b> used maybe less this loudness increased.</p>
+
+              <p>
+          			We have not found matching events or information for this regrouping, but there is some interesting fact to notice. <b>Downtempo and Electronic</b> has a linear increased, mostly due to their close relationship with technologic discovery. And, <b>Metal and Reggae</b> were the one with the lowest variation
+          			, it might be linked to the fact that it <b>Metal</b> appeared later than the other genre and used a high Loudness since the beginning and <b>Reggae</b> used maybe less this loudness increased.</p>
+              </p>
               <h4>Variation (Maximum - Minimum)</h4>
               <div id="div-genres-loudness-MinMax"> </div>
               <h3>Evolution of Tempo</h3>
-              <p>So if we study the evolution of Tempo by genre, most of them actually the same trend as the global one we described earlier, with some exceptions. Indeed <b>Jazz, Folk and Blues</b> music have the same shape of curve but shifted to lower
-                BPM after the first raise. This is due to the slow characteristic of these genre which are typically accoustic. It's indeed amazing how they almost perfectly match The <b>Reggae</b> has a trend to go a little higher in term of tempo, this
-                is maybe due to the apparition of the Ska subgenre. The curve goes up to 128 instead of 125 and stay a little higher than the other genre. As we have seen previously, <b>Metal</b> is a real special genre with the tendancy to never match
-                the other genres. So it's curve is like the <b>Reggae</b> one, but shifted even higher with a BPm that went to 132 and finish at almost 130
+              <p>So if we study the evolution of Tempo by genre, most of them the same trend as the global one we described earlier, with some exceptions. Indeed <b>Jazz, Folk and Blues</b> music has the same shape of curve but shifted to lower
+                BPM after the first raise. This is due to the slow characteristic of these genre which are typically acoustic. It's indeed amazing how they almost perfectly match the <b>Reggae</b> has a trend to go a little higher in term of tempo, this
+                is maybe due to the apparition of the Ska subgenre. The curve goes up to 128 instead of 125 and stay a little higher than the other genre. As we have seen previously, <b>Metal</b> is a real special genre with the tendency to never match
+                the other genres. So, it's curve is like the <b>Reggae</b> one, but shifted even higher with a BPM that went to 132 and finish at almost 130
 
               </p>
               <h4>Mean</h4>
               <div id="div-genres-tempo-Mean"> </div>
               <p>So here, for all genre we clearly see and increasing trend, with waves. </p>
-			The analysis give almost the same result as the previous one on Loudness.</p>
+			The analysis gives almost the same result as the previous one on Loudness.</p>
               <h4>Variation (Maximum - Minimum)</h4>
               <div id="div-genres-tempo-MinMax"> </div>
 
+
+              <h2>Conclusion</h2>
+
+              <p>
+                Our analysis has shown that independant of the genre, the tempo, loudness and duration of songs increased.
+                We were able to explain the changes of features by  e.g popularity changes of music genres or technological innovation.
+
+                Furthermore, we were able to infer the genre popularity over time from the dataset.
+                And last but not least we identified noticeable differnces of e.g. the song tempo evolution of different genres.
+              </p>
+
         </div>
+
         <!-- /.blog-post -->
 
       </div>
