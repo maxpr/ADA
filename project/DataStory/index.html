@@ -36,14 +36,14 @@
             <p class="blog-post-meta">December 19, 2017 by <a href="#">Max Premi</a> and <a href="#">Maximilan Rünz</a></p>
 
             <p>The music world is constantly increasing with lot of songs published everyday from all over the world. Moreover, the world is becoming more connected and this helps to spread music popularity. </p>
-            <p> We want to understand how music popularity evolved in the last roughly 60 years, as music is a really important social factor. People express themselves, and lot of cultural events and customs are derived from it.
-              This popularity could help explain some movements influence, the creation of some music styles and what makes a song popular.
+            <p> We want to understand how music features evolved in the last roughly 60 years, as music is a really important social factor. People express themselves, and lot of cultural events and customs are derived from it.
+              This change could help explain some movements influence, the creation of some music styles and what makes a song/genre popular.
               We will use the dataset from MillionSongDB, coupled with some website such as The Echo Nest API (now Spotify) and musicbrainz.
             </p>
             <hr>
 
             <p>Music is a form of art, and a cultural activity that have been practiced since prehistoric time. Nowadays it is everywhere, and seems inseparable from our life-style, as even humming or hitting an object with your finger makes "music".
-The evolution of this field is thus a really intersting subject to study. It is linked to cultural movement in history, such as the 80's with hippies movement for example but also architecture (<a href="https://en.wikipedia.org/wiki/Baroque_music">Baroque</a>) or religion (<a href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach">Jean-Sébastien Bach</a>) was indeed doing muisc link to religion). This can help us understand how music evolves with the time with how events and movement influence it, but also how music affects these different things.
+The evolution of this field is thus a really intersting subject to study. It is linked to cultural movement in history, such as the 80's with hippies movement for example but also architecture (<a href="https://en.wikipedia.org/wiki/Baroque_music">Baroque</a>) or religion (<a href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach">Jean-Sébastien Bach</a> was indeed doing muisc link to religion). This can help us understand how music evolves with the time with how events and movement influence it, but also how music affects these different things.
 
 It has also become a big industry, with the apparition of the term "commercial music", and interest more and more people, <a href="https://www.youtube.com/watch?v=lExW80sXsHs">for example this video</a>, that collected more than 100 millions views.
 In this study we will concentrate on music from the 20th century and beginning of 21th century, and we will try to awnser the following questions:
@@ -53,15 +53,16 @@ In this study we will concentrate on music from the 20th century and beginning o
     How did music features change during the last 80 years, in terms of duration, style, or even rythm ?
   </li>
   <li>
-    What makes a Song popular a few years ago, what make one popular today, and is the formula for a popular song possible to elaborate ?
+    What makes a Song popular a few years ago, what make one today, and is the formula for a popularity possible to elaborate ? (all in function of genre distribution and not hotness in features)
   </li>
 </ul>
 We will try to awnser these with as much precision as possible in the following lines, while keeping in mind that evolution is a neutral term, and also that popularity is quite subjective.</p>
 
             <h2>Evolution of Music in General</h2>
 
-            <p>We will concentrate in this section, in the evolution of music in general, meaning we did not do difference between genre of music yet. First we can introduce the first numbers. We had a total of 462546 songs at the beggining, and after cleaning (drop where they are to much undefined features or no year), we have aroud 220000 songs. The major features used are the following : the Tempo, Duration, Loudness, Hotness, Terms, TermsFrequency and Termsweight.
+            <p>We will concentrate in this section, in the evolution of music in general, meaning we did not do difference between genre of music yet. First we can introduce the first numbers. We had a total of 462546 songs at the beggining, and after cleaning (drop where they are to much undefined features or no year), we have aroud 220000 songs. The major features used are the following : the Tempo, Duration, Loudness, Terms, TermsFrequency and Termsweight.
 
+Hotness was not used for song as too much of them had a 0 one. We thus tried to map popularity in function of the genre distribution through the years.
 For the evolution of music we had really good result matching historical events, such as the loudness increase, which is a known problem since the 90s. Also change in Tempo with also increase and decrease, and finally duration with high increase from 1950. These results are detailled in the following section with more analysis and explanations.
 The Terms with frequency were used to map song to Parent Genre. We did the mapping ourselves and we achieve an accuracy of 75% which is quite correct.
 
@@ -69,7 +70,8 @@ We also did a clustering (k-NN) of song to see if we could match the time period
 
             <h3>Evolution of Tempo</h3>
 
-            <p>Let's look at the Tempo evolution. </p>
+            <p>Let's look at the Tempo evolution. We can clearly see that there has been an increase in the overall tempo since the 60s. With a little wave that converged to a value around 125. This will
+			be discribed step by step by using the slider.</p>
 
             <div id="div-tempo"> </div>
             <input id="SliderTempo" type="text" />
@@ -92,7 +94,7 @@ First <b>Loudness</b> is defined as <a href="https://en.wikipedia.org/wiki/Loudn
             <h3>Evolution of Duration</h3>
 
             <p>The analysis of songDuration will be done in 3 steps: From the 60s to the 80s, then the 80s to the 2000s and finally from the 2000s to nowadays.
-First we will discus the gap between 1960 (3 minutes average) to 1980 (3 minutes 45 average).
+First we will discus the gap between 1960 (3 minutes average) to 1980 (3 minutes 45 average). But they have been a great increased on a short period, and this duration has been around the same since this period.
             <div id="div-duration"> </div>
             <input id="SliderDuration" type="text" />
             <div id="div-duration-descr"></div>
@@ -106,7 +108,8 @@ First we will discus the gap between 1960 (3 minutes average) to 1980 (3 minutes
 
 We can clearly see the trending genre moving with the time.
 
-So this is the evolution of music analyzed in function of the number of songs labelled by genre, we will now look at the features changes by genre.</p>
+So this is the evolution of music analyzed in function of the number of songs labelled by genre, we will now look at the features changes by genre.
+This evolution can be correlated to the popularity of a genre, as the more % it is, the more popular it is supposed to be ( else it would not have been released)</p>
             <div id="div-genres"> </div>
 
             <div id="div-genres-descr" ></div>
@@ -115,7 +118,11 @@ So this is the evolution of music analyzed in function of the number of songs la
 
 
             <br/>
-
+			<h3>What we can infer</h3>
+			<p>From this we can understand the popularity of some old time such as <b>Jazz, Blues or Folk</b> has greatly reduce since the begining of the 20 th century. This is due to the apparition of new genre based on this previous one.
+			Also cultural movement or apparition of some famous people increased the popularity of a genre with the example of Bob Marley for the <b>Reggae</b> or the rise of <b>Metal/ Heavy-Metal</b> in the late 70s. And finally the technological advance have helped some genre such as <b>Electronic</b> to spread faster and take 
+			a place in this genre population.</p>
+			
             <h2>Evolution of specific Genres</h2>
             <h3>Evolution of Loudness</h3>
 			<p>The evolution of Loudness by genre confort our observation of Loudness War shown in the previous plots.
@@ -124,7 +131,9 @@ So this is the evolution of music analyzed in function of the number of songs la
 			<b>Folk,Blues and Jazz</b>. This should be due to the accoustic nature of these genre as it does not use as much electronical material as the other genres.</p>
             <h4>Mean</h4>
             <div id="div-genres-loudness-Mean"> </div>
-			<p>Don't know what to say</p>
+			<p>We can see that the variation of loudness clearly increased linearly, for all genres. One interesting fact is how they were spread from each other at the beginning, but then joined in 1985, and spread again in the beginning of the loudness War.
+			We have not found matching events or information for this regrouping, but there are some interesting fact to notice. <b>Downtempo and Electronic</b> has a really linear increased, mostly due to their close relationship with technologic discovery. And also, <b>Metal and Reggae</b> were the one with the lowest variation
+			, it might be linked to the fact that it <b>Metal</b> appeared later than the other genre and used a high Loudness since the beginning and <b>Reggae</b> used maybe less this loudness increased.</p>
             <h4>Variation (Maximum - Minimum)</h4>
             <div id="div-genres-loudness-MinMax"> </div>
             <h3>Evolution of Tempo</h3>
@@ -139,7 +148,8 @@ So this is the evolution of music analyzed in function of the number of songs la
 			</p>
             <h4>Mean</h4>
             <div id="div-genres-tempo-Mean"> </div>
-			<p>So here, for all genre we clearly see and increasing trend, with waves. </p>
+			<p>So here, for all genre we clearly see and increasing trend, with waves.
+			The analysis give almost the same result as the previous one on Loudness.</p>
             <h4>Variation (Maximum - Minimum)</h4>
             <div id="div-genres-tempo-MinMax"> </div>
 
