@@ -35,18 +35,48 @@
             <h2 class="blog-post-title">Evolution of Music</h2>
             <p class="blog-post-meta">December 19, 2017 by <a href="#">Max Premi</a> and <a href="#">Maximilan Rünz</a></p>
 
-            <p>Write abstract here.</p>
+            <p>The music world is constantly increasing with lot of songs published everyday from all over the world. Moreover, the world is becoming more connected and this helps to spread music popularity. We want to understand how music popularity evolved in the last roughly 60 years, as music is a really important social factor. People express themselves, and lot of cultural events and customs are derived from it.
+This popularity could help explain some movements influence, the creation of some music styles and what makes a song popular.
+If there was a "perfect" composition it would be interesting as it has also become a money-making industry.
+We will use the dataset from MillionSongDB, coupled with some website such as The Echo Nest API (now Spotify) and musicbrainz.</p>
             <hr>
 
-            <p>Write intro here</p>
+            <p>Music is a form of art, and a cultural activity that have been practiced since prehistoric time. Nowadays it is everywhere, and seems inseparable from our life-style, as even humming or hitting an object with your finger makes "music".  
+The evolution of this field is thus a really intersting subject to study. It is linked to cultural movement in history, such as the 80's with hippies movement for example but also architecture ([Baroque](https://en.wikipedia.org/wiki/Baroque_music)) or religion ([Jean-Sébastien Bach](https://en.wikipedia.org/wiki/Johann_Sebastian_Bach) was indeed doing muisc link to religion). This can help us understand how music evolves with the time with how events and movement influence it, but also how music affects these different things. 
+
+It has also become a big industry, with the apparition of the term "commercial music", and interest more and more people, [for example this video](https://www.youtube.com/watch?v=lExW80sXsHs), that collected more than 100 millions views.  
+In this study we will concentrate on music from the 20th century and beginning of 21th century, and we will try to awnser the following questions:
+    
+   * How did music features change during the last 80 years, in terms of duration, style, or even rythm ?  
+    
+   * What makes a Song popular a few years ago, what make one popular today, and is the formula for a popular song possible to elaborate ?
+   
+We will try to awnser these with as much precision as possible in the following lines, while keeping in mind that evolution is a neutral term, and also that popularity is quite subjective.</p>
 
             <h2>Evolution of Music in General</h2>
 
-            <p>Describe which features we analysed, first findings</p>
+            <p>We will concentrate in this section, in the evolution of music in general, meaning we did not do difference between genre of music yet. First we can introduce the first numbers. We had a total of 462546 songs at the beggining, and after cleaning (drop where they are to much undefined features or no year), we have aroud 220000 songs. The major features used are the following : the Tempo, Duration, Loudness, Hotness, Terms, TermsFrequency and Termsweight.
+
+For the evolution of music we had really good result matching historical events, such as the loudness increase, which is a known problem since the 90s. Also change in Tempo with also increase and decrease, and finally duration with high increase from 1950. These results are detailled in the following section with more analysis and explanations.
+The Terms with frequency were used to map song to Parent Genre. We did the mapping ourselves and we achieve an accuracy of 75% which is quite correct.
+
+We also did a clustering (k-NN) of song to see if we could match the time period of a song, and we did get a result of 55% which is not that good. It is in the original work of the notebook, if you're interested in it.</p>
 
             <h3>Evolution of Tempo</h3>
 
-            <p>Describe observations.</p>
+            <p>Let's look at the Tempo evolution. There is a first gap between 1962 and 1964 were the tempo dropped, and with our confidence analysis, we can actually see that it's not outliers, but the curve do not fit 2 points that are so close. 
+
+Then from 1964 to 1980, there is a clear increase in the Tempo(115 to 125). This might be in correlation with the appartion of **Hard Rock** group and reduction in **Folk** and **Blues**.
+
+Indeed the **Metal** percentage went from 2% to 4.72%, **Folk** from 9.71% to 5.4% and **Blues** from 11% to 6.67%
+
+From this [article](https://en.wikipedia.org/wiki/1970s_in_music) it states: "The 1970s saw the emergence of hard rock as one of the most prominent subgenres of rock music with acts such as Alice Cooper, Deep Purple, Led Zeppelin, Queen, Nazareth, Black Sabbath and Blue Öyster Cult were highly popular during the first half of the decade".
+
+This style has indeed a higher tempo, and was highly popular so that's why the overall tempo raised this way.
+
+Then fromthe 80s to 1992 there is a slight decrease in the tempo of 5 BPM, that might be linked to the apparition of important **Pop** star such as Michael Jackson, Prince, and the emergence of Madonna and Whitney Houston. **Pop** has a tempo under **Hard Rock** and was more popular at this time.
+
+Last but not least, from the 90s to 2010, the tempo has slightly increase from 125 BPM again, which might be due to the popularisation of **Electronic** music due to the apparition of tools such as Autothune or Software as Ableton, new way of making music. From the same [article](https://en.wikipedia.org/wiki/1970s_in_music) as before : "Electronic music, which had risen in popularity in the 1980s, grew highly popular in the 1990s; house and techno from the 1980s rose to international success in this decade, as well as new electronic dance music genres such as trance, happy hardcore, drum and bass, intelligent dance and trip hop." Example of Artists are: Daft Punk, Moby or more recently Justice.</p>
             <div id="div-tempo"> </div>
             <input id="SliderTempo" type="text" />
             <div id="div-tempo-descr"></div>
@@ -55,7 +85,15 @@
 
             <h3>Evolution of Loudness</h3>
 
-            <p>Describe observations.</p>
+            <p>Here we do not need to explain it, we clearly see that the **Loudness** increased, but why is that and how did the time influence this ?
+
+First **Loudness** is defined as [follow](https://en.wikipedia.org/wiki/Loudness) : "That attribute of auditory sensation in terms of which sounds can be ordered on a scale extending from quiet to loud.", or more theoritically, it is the subjective perception of [sound pressure](https://en.wikipedia.org/wiki/Sound_pressure) (which is is the local pressure deviation from the ambient (average, or equilibrium) atmospheric pressure, caused by a sound wave.)
+
+In the early years(1940 to 1970), the song **Loudness** was just limited by the electronic limitations(analog peaks example). That's why the mean values are around -12.
+
+There was a slight increased during the 80s to the 90s due to the use of [CDs](https://en.wikipedia.org/wiki/Compact_disc) released in 1982 that replaced Vynil. There was a slow decreasd from 82 to 90s due to rock popularity with the average level of the average rock song during most of the decade was around [−16.8](https://en.wikipedia.org/wiki/Loudness_war#cite_note-Katz3rd-6).
+
+A real [**Loudness War**](https://en.wikipedia.org/wiki/Loudness_war) began in the 90s (from -10 to almost -5) with the introduction of digital signal processing capable of producing further loudness increases. The CDs capacity could grow higher and higher and optimization were really advanced. This trend to increased audio level for songs was highly criticized by the public, but producer were seeing a correlation ( true or false, we cannot judge here because the popularity given in our dataset was at the time of the released of the datas (2010s)) in the loudness and popularity. </p>
             <div id="div-loudness"> </div>
             <input id="SliderLoudness" type="text" />
             <div id="div-loudness-descr"></div>
@@ -64,17 +102,47 @@
 
             <h3>Evolution of Duration</h3>
 
-            <p>Describe observations.</p>
+            <p>The analysis of songDuration will be done in 3 steps: From the 60s to the 80s, then the 80s to the 2000s and finally from the 2000s to nowadays.
+First we will discus the gap between 1960 (3 minutes average) to 1980 (3 minutes 45 average).
+
+From this [article](http://www.slate.fr/story/95041/trois-minutes) songs had a really great increased from the 1960. Jimi Hendrix and Led Zeppelin, for example, did songs that were more than 5 minutes. Between 1962 and 1965, the *Beatles* only recorded songs less than 3 minutes !
+
+At this date, the song were recored on Vynil (45 rpm size), which was limited to 3 minutes by faces, and to be on the radio (the biggest way to be known during this time) your song had to be on a 45rpm Vynil
+
+Then fom the 80s to the 2000s, the songDuration increased really slowly from 3.45 minutes to almost 4 minutes, which is the period where **Downtempo** and **Electronic** music get popular. The song might have a been a little longer due to the digitalisation of the music and the repeated pattern of techno/electro.
+
+Then finally, the Duration stabilized to be get to the 3.50 minute means in the 2010s. This is hard to explain in a sense as music variety has become insane during these years, and duration change a lot in function of new styles ( R&B, Dubstep, Trance music, ....).</p>
             <div id="div-duration"> </div>
             <input id="SliderDuration" type="text" />
             <div id="div-duration-descr"></div>
-
+			
             <br/>
 
 
             <h2>Evolution of Genre Population</h2>
 
-            <p>Describe observations.</p>
+            <p>We will talk here about the genre Distribution evolution.
+
+We can clearly see the trending genre moving with the time. Firstly **Rock** music since the 1950 has almost only increased with a stability around 20% of the music distribution. It is indeed one of the most popular genre, as band classified as **Rock** are amoung the most famous ones: The Beatles, The Rolling Stones, Queen , and Red Hot Chilli Peppers for example.
+
+**Pop** music has increased a lot between the 70s-80s due to popularity of Disco music and subgenre linked to it. Then it has kept a solid part of the music around 15%.
+
+**Electronic** and **Downtempo** have a really similar evolution, as it due to the digitalisation of the material and music. To be precise **Downtempo** (or [chill-music](https://fr.wikipedia.org/wiki/Downtempo)) is characterized by calmer electronic music, for example [this artist](https://www.youtube.com/watch?v=jfFTT3iz740) which is personnaly one of my favourite.
+
+So both of these genre were not very popular in the early years ( 1950) with less than 5% of the genre, and became more popular from the mid 80s with digitalisation of material and mostly in the begining of the 90s thanks to new technology (synthetisors, software, new songs, science discoveries with sound and waves manipulations), to get to a solid 15% each. Nowadays **Downtempo** is really popular notably thanks to a sub genre called **lofi**.
+
+**Reggae** music as always been under 10%, but had a pick around 1975-1980, probably because of the apparition of Bob Marley, and its influence around the world.
+
+**Jazz** and **Blues** also had a similar evolution throught the time. It was widely popular in the 60s with 15% of distribution each. However it decreases widely since nowadays, where it represents only 8% and 5% respectively. It might be because of the influence it had on the other genres and cultural movement. Indeed **Jazz** and **Blues** were both created by afro american population in the US in the early 1920s. It is thanks to both this music that **Rock, Pop** and almost all the other genres exist. This is why it is less popular now, even if really big name were doing this type of music ( Ray Charles, Louis Amstrong
+
+**Folk** music has known a bug peak in 1952 were it was 15% of the music genre. Today it represent only 4% of music distribution. It is associated to [traditional music](https://en.wikipedia.org/wiki/Contemporary_folk_music).
+**Folk** has also helped the creation of Indi music.
+
+**Metal** music is one of the most special genre here. It was quasi inexistant before the 60s (less than 1.5%) , and then increase to get a 5% part of the genre nowadays. **Metal** movement has cultural origin in the late 60s in the united Kingdom. It was qualified by heavy distrosion and concentrated on the melodic part of the music with guitar solos and really hard guitar riffs. The major group were : Metallica, Motorhead or Iron Maiden
+
+Finally **R&B** which was around 10% until the 80s and dropped to 5% since this time. It is also an affro American genre from the 40s, which is the genre that gave birth to Rap music. I think our matching did not put enough information into R&B as it is not supposed to decrease so much.
+
+So this is the evolution of music analyzed in function of the number of songs labelled by genre, we will now look at the features changes by genre.</p>
             <div id="div-genres"> </div>
 
 
