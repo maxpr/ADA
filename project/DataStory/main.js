@@ -165,12 +165,12 @@ $(function() {
     }
     drawLoudnessChart(data);
 
-    if (year > 2000){
-      $('#div-loudness-descr').html("Description for after 2000");
-    } else if (year > 1970){
-      $('#div-loudness-descr').html("Description for after 1970");
+    if (year > 1990){
+      $('#div-loudness-descr').html('A real <a href="https://en.wikipedia.org/wiki/Loudness_war"><b>Loudness War</b></a> began in the 90s (from -10 to almost -5) with the introduction of digital signal processing capable of producing further loudness increases. The CDs capacity could grow higher and higher and optimization were really advanced. This trend to increased audio level for songs was highly criticized by the public, but producer were seeing a correlation ( true or false, we cannot judge here because the popularity given in our dataset was at the time of the released of the datas (2010s)) in the loudness and popularity. </p>');
+    } else if (year > 1980){
+      $('#div-loudness-descr').html('There was a slight increased during the 80s to the 90s due to the use of <a href="https://en.wikipedia.org/wiki/Compact_disc">CDs</a> released in 1982 that replaced Vynil. There was a slow decreasd from 82 to 90s due to rock popularity with the average level of the average rock song during most of the decade was around <a href="https://en.wikipedia.org/wiki/Loudness_war#cite_note-Katz3rd-6">−16.8</a>).');
     } else {
-      $('#div-loudness-descr').html("Description for beginning");
+      $('#div-loudness-descr').html("In the early years(1940 to 1970), the song <b>Loudness</b> was just limited by the electronic limitations(analog peaks example). That's why the mean values are around -12.");
     }
   }
 
@@ -267,11 +267,12 @@ $(function() {
     drawDurationChart(data);
 
     if (year > 2000){
-      $('#div-duration-descr').html("Description for after 2000");
-    } else if (year > 1970){
-      $('#div-duration-descr').html("Description for after 1970");
+      $('#div-duration-descr').html('Then finally, the Duration stabilized to be get to the 3.50 minute means in the 2010s. This is hard to explain in a sense as music variety has become insane during these years, and duration change a lot in function of new styles ( R&B, Dubstep, Trance music, ....).</p>');
+    } else if (year > 1980){
+      $('#div-duration-descr').html('Then fom the 80s to the 2000s, the songDuration increased really slowly from 3.45 minutes to almost 4 minutes, which is the period where <b>Downtempo</b> and <b>Electronic</b> music get popular. The song might have a been a little longer due to the digitalisation of the music and the repeated pattern of techno/electro.');
     } else {
-      $('#div-duration-descr').html("Description for beginning");
+      $('#div-duration-descr').html('From this <a href="http://www.slate.fr/story/95041/trois-minutes">article</a> songs had a really great increased from the 1960. Jimi Hendrix and Led Zeppelin, for example, did songs that were more than 5 minutes. Between 1962 and 1965, the <i>Beatles</i> only recorded songs less than 3 minutes !'+
+      'At this date, the song were recored on Vynil (45 rpm size), which was limited to 3 minutes by faces, and to be on the radio (the biggest way to be known during this time) your song had to be on a 45rpm Vynil');
     }
   }
 
