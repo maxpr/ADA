@@ -1,5 +1,5 @@
 # Title
-Evolution in music through the years.
+Evolution in music through the years. [Blog Post](https://maxpr.github.io/ADA/project/DataStory/)
 
 # Abstract
 
@@ -68,5 +68,5 @@ Is there a possibility to convert IDs from the dataset to Spotify URNs?
 
 # What did each group member did  
 
-**Maximilian Rünz** = Data fetching from cluster, Descriptive Statistics, Feature Analysis, Genre mapping, Genre Dataframes, Genre Distribution, Website (HTML+JS), Text spelling corrections, Notebook cleanup 
+**Maximilian Rünz** = Data fetching from cluster, Descriptive Statistics, Feature Analysis, Genre mapping, Genre Dataframes, Genre Distribution, Website (HTML+JS), Text spelling corrections   
 **Max Premi** = Cluserting, Mapping to genre improving, Interactive Plot by genre, Some Data Cleaning, Analysis of Result for Feature Analysis, Text for DataStory
