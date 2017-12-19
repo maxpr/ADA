@@ -543,7 +543,8 @@ $(function() {
           yAxes: [{}],
           xAxes: [{
             ticks: {
-              max: 0.3
+              max: 0.3,
+              beginAtZero:true
             }
           }]
         },
