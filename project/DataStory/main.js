@@ -58,14 +58,14 @@ $(function() {
     drawTempoChart(data);
 
       if (year > 1992) {
-        $('#div-tempo-descr').html('Last but not least, from the 90s to 2010, the tempo increased by a few BPMs , which might be caused by the popularization of <b>Electronic</b> music: A new way of making music. Citing the same <a href="https://en.wikipedia.org/wiki/1970s_in_music">article</a> as before : "Electronic music, which had risen in popularity in the 1980s, grew highly popular in the 1990s; house and techno from the 1980s rose to international success in this decade, as well as new electronic dance music genres such as trance, happy hardcore, drum and bass, intelligent dance and trip hop." Example of Artists are: Daft Punk, Moby or more recently Justice.');
+        $('#div-tempo-descr').html('From the 90s to 2010, the tempo increased by a few BPMs , which might be caused by the popularization of <b>Electronic</b> music. Citing the same <a href="https://en.wikipedia.org/wiki/1970s_in_music">article</a> as before : "Electronic music, which had risen in popularity in the 1980s, grew highly popular in the 1990s; house and techno from the 1980s rose to international success in this decade, as well as new electronic dance music genres such as trance, happy hardcore, drum and bass, intelligent dance and trip hop." Example of Artists are: Daft Punk, Moby or more recently Justice.');
       } else if (year > 1980) {
-        $('#div-tempo-descr').html("From the 80s to 1992 there is a decrease in the tempo of seven BPMs, that might be linked to the apparition of important <b>Pop</b> star such as Michael Jackson, Prince, and the emergence of Madonna and Whitney Houston. <b>Pop</b> has a tempo under <b>Hard Rock</b> and was more popular at this time.");
+        $('#div-tempo-descr').html("From the 80s to 1992 there is a decrease in the tempo of seven BPMs, that might be linked to the appearance of important <b>Pop</b> star such as Michael Jackson, Prince, and the emergence of Madonna and Whitney Houston. <b>Pop</b> has a tempo under <b>Hard Rock</b> and was more popular at this time.");
       } else if (year > 1964) {
         $('#div-tempo-descr').html("From 1964 to 1980, there is an increase of seven BPMs. This might be caused by the appearance of <b>Hard Rock</b> group and reduction in <b>Folk</b> and <b>Blues</b>. " +
           "The portion of <b>Metal</b> songs increased from 2% to 4.72%, for <b>Folk</b> it increased from 9.71% to 5.4% and for <b>Blues</b> it increased from 11% to 6.67% (more details later in this post). " +
           'Also <a href="https://en.wikipedia.org/wiki/1970s_in_music">this article</a> states: "The 1970s saw the emergence of hard rock as one of the most prominent subgenres of rock music with acts such as Alice Cooper, Deep Purple, Led Zeppelin, Queen, Nazareth, Black Sabbath and Blue Öyster Cult were highly popular during the first half of the decade".' +
-          "This style has indeed a higher tempo, and was highly popular at that time.");
+          "This style has a higher tempo, and was highly popular at that time.");
       } else {
         $('#div-tempo-descr').html("Between 1962 and 1964 the tempo of songs did not change by a lot.");
       }
@@ -178,7 +178,7 @@ $(function() {
     drawLoudnessChart(data);
 
     if (year > 1990) {
-      $('#div-loudness-descr').html('A real <a href="https://en.wikipedia.org/wiki/Loudness_war"><b>Loudness War</b></a> began in the 90s (from -10 to almost -5) with the introduction of digital signal processing capable of producing further loudness increases. The CDs capacity could grow higher and higher and optimization were advanced. This trend to increased audio level for songs was highly criticized by the public, but producers were seeing a correlation ( true or false, we cannot judge here because the popularity given in our dataset was at the time of the released of the data (2010s)) in the loudness and popularity. </p>');
+      $('#div-loudness-descr').html('A <a href="https://en.wikipedia.org/wiki/Loudness_war"><b>Loudness War</b></a> began in the 90s (from -10 to almost -5) with the introduction of digital signal processing capable of producing further loudness increases. The CDs capacity could grow higher and higher and optimization were advanced. This trend to increased audio level for songs was highly criticized by the public, but producers were seeing a correlation in the loudness and popularity. </p>');
     } else if (year > 1980) {
       $('#div-loudness-descr').html('There was a slight increased during the 80s to the 90s due to the use of <a href="https://en.wikipedia.org/wiki/Compact_disc">CDs</a> released in 1982 that replaced Vinyl. There was a slow decreased from 82 to 90s due to rock popularity with the average level of the average rock song during most of the decade was around <a href="https://en.wikipedia.org/wiki/Loudness_war#cite_note-Katz3rd-6">−16.8</a>).');
     } else {
@@ -293,10 +293,10 @@ $(function() {
     if (year > 2000) {
     $('#div-duration-descr').html('Then finally, the Duration stabilized to be get to the 3.50-minute means in the 2010s. This is hard to explain in a sense as music variety has become insane during these years, and duration change a lot in function of new styles ( R&B, Dubstep, Trance music, ....).</p>');
   } else if (year > 1980) {
-    $('#div-duration-descr').html('Then from the 80s to the 2000s, the songDuration increased really slowly from 3.45 minutes to almost 4 minutes, which is the period where <b>Downtempo</b> and <b>Electronic</b> music gets popular. The song might have a been a little longer due to the digitalization of the music and the repeated pattern of techno/electro.');
+    $('#div-duration-descr').html('Then from the 80s to the 2000s, the songDuration increased slowly from 3.45 minutes to almost 4 minutes. In is the period <b>Downtempo</b> and <b>Electronic</b> music got popular. The song might have a been a little longer due to the digitalization of the music and the repeated pattern of techno/electro.');
   } else {
-    $('#div-duration-descr').html('From this <a href="http://www.slate.fr/story/95041/trois-minutes">article</a> songs had a really great increased from the 1960. Jimi Hendrix and Led Zeppelin, for example, did songs that were more than 5 minutes. Between 1962 and 1965, the <i>Beatles</i> only recorded songs less than 3 minutes !' +
-      'At this date, the songs were recorded on Vinyl (45 rpm size), which was limited to 3 minutes by faces, and to be on the radio (the biggest way to be known during this time) your song had to be on a 45rpm Vinyl');
+    $('#div-duration-descr').html('Between 1962 and 1965, the <i>Beatles</i> only recorded songs less than 3 minutes. At this date, the songs were recorded on Vinyl (45 rpm size), which was limited to 3 minutes by faces, and to be on the radio (the biggest way to be known during this time) your song had to be on a 45rpm Vinyl'+
+                                  'From this <a href="http://www.slate.fr/story/95041/trois-minutes">article</a> songs had a really great increased from the 1960. Jimi Hendrix and Led Zeppelin, for example, did songs that were more than 5 minutes.');
   }
 
   }
@@ -432,19 +432,19 @@ $(function() {
 
   function displayGenreDescription(genre) {
     if (genre === "ROCK") {
-      $('#div-genres-descr').html('Firstly <b>Rock</b> music since the 1950 has almost only increased with a stability around 20% of the music distribution. It is indeed one of the most popular genre, as band classified as <b>Rock</b> are among the most famous ones: The Beatles, The Rolling Stones, Queen , and Red-Hot Chili Peppers for example.');
+      $('#div-genres-descr').html('<b>Rock</b> music since the 1950 has almost only increased with a stability around 20% of the music distribution. It is one of the most popular genre, as band classified as <b>Rock</b> are among the most famous ones: The Beatles, The Rolling Stones, Queen , and Red-Hot Chili Peppers for example.');
     } else if (genre === "POP") {
       $('#div-genres-descr').html('<b>Pop</b> music has increased a lot between the 70s-80s due to popularity of Disco music and subgenre linked to it. Then it has kept a solid part of the music around 15%.');
     } else if (genre === "ELECTRONIC" || genre === "DOWNTEMPO") {
-      $('#div-genres-descr').html('<b>Electronic</b> and <b>Downtempo</b> have a really similar evolution, as it due to the digitalization of the material and music. To be precise <b>Downtempo</b> (or <a href="https://fr.wikipedia.org/wiki/Downtempo">chill-music</a>) is characterized by calmer electronic music, for example <a href="https://www.youtube.com/watch?v=jfFTT3iz740">this artist</a> which is personally one of my favorite.' +
+      $('#div-genres-descr').html('<b>Electronic</b> and <b>Downtempo</b> have a really similar evolution. This is caused by the digitalization of the material and music. To be precise <b>Downtempo</b> (or <a href="https://fr.wikipedia.org/wiki/Downtempo">chill-music</a>) is characterized by calmer electronic music, for example <a href="https://www.youtube.com/watch?v=jfFTT3iz740">this artist</a>.' +
         'So, both genres were not very popular in the early years ( 1950) with less than 5% of the genre, and became more popular from the mid-80s with digitalization of material and mostly in the beginning of the 90s thanks to new technology (synthesizers, software, new songs, science discoveries with sound and waves manipulations), to get to a solid 15% each. Nowadays <b>Downtempo</b> is really popular notably thanks to a sub-genre called <b>lo-fi</b>.');
     } else if (genre === "REGGAE") {
-      $('#div-genres-descr').html('<b>Reggae</b> music as always been under 10%, but had a pick around 1975-1980, probably because of the apparition of Bob Marley, and its influence around the world.');
+      $('#div-genres-descr').html('<b>Reggae</b> music as always been under 10%, but had a pick around 1975-1980, probably because of the appearance of Bob Marley, and its influence around the world.');
     } else if (genre === "JAZZ" || genre === "BLUES") {
-      $('#div-genres-descr').html('<b>Jazz</b> and <b>Blues</b> also had a similar evolution through the time. It was widely popular in the 60s with 15% of distribution each. However, it decreases widely since nowadays, where it represents only 8% and 5% respectively. It might be because of the influence it had on the other genres and cultural movement. Indeed <b>Jazz</b> and <b>Blues</b> were both created by afro American population in the US in the early 1920s. It is thanks to both this' +
+      $('#div-genres-descr').html('<b>Jazz</b> and <b>Blues</b> also had a similar evolution through the time. It was widely popular in the 60s with 15% of distribution each. However, it decreases since nowadays, where it represents only 8% and 5% respectively. It might be because of the influence it had on the other genres and cultural movement. <b>Jazz</b> and <b>Blues</b> were both created by afro American population in the US in the early 1920s. It is thanks to both this' +
         'music that <b>Rock, Pop</b> and almost all the other genres exist. Therefore, it is less popular now, even if big name were doing this type of music ( Ray Charles, Louis Armstrong');
     } else if (genre === "FOLK") {
-      $('#div-genres-descr').html('<b>Folk</b> music has known a bug peak in 1952 were it was 15% of the music genre. Today it represents only 4% of music distribution. It is associated to <a href="https://en.wikipedia.org/wiki/Contemporary_folk_music">traditional music</a>.' +
+      $('#div-genres-descr').html('<b>Folk</b> music has known a bug peak in 1952 were it represented 15% of the music genre. Today it represents only 4% of music distribution. It is associated to <a href="https://en.wikipedia.org/wiki/Contemporary_folk_music">traditional music</a>.' +
         '<b>Folk</b> has also helped the creation of Indi music.');
     } else if (genre === "METAL") {
       $('#div-genres-descr').html('<b>Metal</b> music is one of the most special genre here. It was quasi inexistent before the 60s (less than 1.5%) , and then increase to get a 5% part of the genre nowadays. <b>Metal</b> movement has cultural origin in the late 60s in the United Kingdom. It was qualified by heavy distortion and concentrated on the melodic part of the music with guitar solos and hard guitar riffs. The major group were : Metallica, Motorhead or Iron Maiden');
