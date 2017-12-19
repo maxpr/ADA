@@ -57,12 +57,17 @@ $(function() {
     }
     drawTempoChart(data);
 
-    if (year > 2000){
-      $('#div-tempo-descr').html("Description for after 2000");
-    } else if (year > 1970){
-      $('#div-tempo-descr').html("Description for after 1970");
+    if (year > 1992){
+      $('#div-tempo-descr').html('Last but not least, from the 90s to 2010, the tempo has slightly increase from 125 BPM again, which might be due to the popularisation of <b>Electronic</b> music due to the apparition of tools such as Autothune or Software as Ableton, new way of making music. From the same <a href="https://en.wikipedia.org/wiki/1970s_in_music">article</a> as before : "Electronic music, which had risen in popularity in the 1980s, grew highly popular in the 1990s; house and techno from the 1980s rose to international success in this decade, as well as new electronic dance music genres such as trance, happy hardcore, drum and bass, intelligent dance and trip hop." Example of Artists are: Daft Punk, Moby or more recently Justice.');
+    } else if (year > 1980){
+      $('#div-tempo-descr').html("Then from the 80s to 1992 there is a slight decrease in the tempo of 5 BPM, that might be linked to the apparition of important <b>Pop</b> star such as Michael Jackson, Prince, and the emergence of Madonna and Whitney Houston. <b>Pop</b> has a tempo under <b>Hard Rock</b> and was more popular at this time.");
+    } else if (year > 1964){
+      $('#div-tempo-descr').html("Then from 1964 to 1980, there is a clear increase in the Tempo(115 to 125). This might be in correlation with the appartion of <b>Hard Rock</b> group and reduction in <b>Folk</b> and <b>Blues</b> " +
+                                  "Indeed the <b>Metal</b> percentage went from 2% to 4.72%, <b>Folk</b> from 9.71% to 5.4% and <b>Blues</b> from 11% to 6.67%"+
+                                  'From this <a href="https://en.wikipedia.org/wiki/1970s_in_music">article</a> it states: "The 1970s saw the emergence of hard rock as one of the most prominent subgenres of rock music with acts such as Alice Cooper, Deep Purple, Led Zeppelin, Queen, Nazareth, Black Sabbath and Blue Öyster Cult were highly popular during the first half of the decade".'+
+                                  "This style has indeed a higher tempo, and was highly popular so that's why the overall tempo raised this way.");
     } else {
-      $('#div-tempo-descr').html("Description for beginning");
+      $('#div-tempo-descr').html("There is a first gap between 1962 and 1964 were the tempo dropped, and with our confidence analysis, we can actually see that it's not outliers, but the curve do not fit 2 points that are so close.");
     }
   }
 
