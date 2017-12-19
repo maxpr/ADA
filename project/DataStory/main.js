@@ -57,19 +57,18 @@ $(function() {
     }
     drawTempoChart(data);
 
-    if (year > 1992) {
-      $('#div-tempo-descr').html('Last but not least, from the 90s to 2010, the tempo increased by a few BPMs , which might be caused by the popularization of <b>Electronic</b> music: A new way of making music. Citing the same <a href="https://en.wikipedia.org/wiki/1970s_in_music">article</a> as before : "Electronic music, which had risen in popularity in the 1980s, grew highly popular in the 1990s; house and techno from the 1980s rose to international success in this decade, as well as new electronic dance music genres such as trance, happy hardcore, drum and bass, intelligent dance and trip hop." Example of Artists are: Daft Punk, Moby or more recently Justice.');
-    } else if (year > 1980) {
-      $('#div-tempo-descr').html("From the 80s to 1992 there is a decrease in the tempo of seven BPMs, that might be linked to the apparition of important <b>Pop</b> star such as Michael Jackson, Prince, and the emergence of Madonna and Whitney Houston. <b>Pop</b> has a tempo under <b>Hard Rock</b> and was more popular at this time.");
-    } else if (year > 1964) {
-      $('#div-tempo-descr').html("From 1964 to 1980, there is an increase of seven BPMs. This might be caused by the appearance of <b>Hard Rock</b> group and reduction in <b>Folk</b> and <b>Blues</b>. " +
-        "The portion of <b>Metal</b> songs increased from 2% to 4.72%, for <b>Folk</b> it increased from 9.71% to 5.4% and for <b>Blues</b> it increased from 11% to 6.67% (more details later in this post). " +
-        'Also <a href="https://en.wikipedia.org/wiki/1970s_in_music">this article</a> states: "The 1970s saw the emergence of hard rock as one of the most prominent subgenres of rock music with acts such as Alice Cooper, Deep Purple, Led Zeppelin, Queen, Nazareth, Black Sabbath and Blue Öyster Cult were highly popular during the first half of the decade".' +
-        "This style has indeed a higher tempo, and was highly popular at that time.");
-    } else {
-      $('#div-tempo-descr').html("Between 1962 and 1964 the tempo of songs did not change by a lot.");
-    }
-  }
+      if (year > 1992) {
+        $('#div-tempo-descr').html('Last but not least, from the 90s to 2010, the tempo increased by a few BPMs , which might be caused by the popularization of <b>Electronic</b> music: A new way of making music. Citing the same <a href="https://en.wikipedia.org/wiki/1970s_in_music">article</a> as before : "Electronic music, which had risen in popularity in the 1980s, grew highly popular in the 1990s; house and techno from the 1980s rose to international success in this decade, as well as new electronic dance music genres such as trance, happy hardcore, drum and bass, intelligent dance and trip hop." Example of Artists are: Daft Punk, Moby or more recently Justice.');
+      } else if (year > 1980) {
+        $('#div-tempo-descr').html("From the 80s to 1992 there is a decrease in the tempo of seven BPMs, that might be linked to the apparition of important <b>Pop</b> star such as Michael Jackson, Prince, and the emergence of Madonna and Whitney Houston. <b>Pop</b> has a tempo under <b>Hard Rock</b> and was more popular at this time.");
+      } else if (year > 1964) {
+        $('#div-tempo-descr').html("From 1964 to 1980, there is an increase of seven BPMs. This might be caused by the appearance of <b>Hard Rock</b> group and reduction in <b>Folk</b> and <b>Blues</b>. " +
+          "The portion of <b>Metal</b> songs increased from 2% to 4.72%, for <b>Folk</b> it increased from 9.71% to 5.4% and for <b>Blues</b> it increased from 11% to 6.67% (more details later in this post). " +
+          'Also <a href="https://en.wikipedia.org/wiki/1970s_in_music">this article</a> states: "The 1970s saw the emergence of hard rock as one of the most prominent subgenres of rock music with acts such as Alice Cooper, Deep Purple, Led Zeppelin, Queen, Nazareth, Black Sabbath and Blue Öyster Cult were highly popular during the first half of the decade".' +
+          "This style has indeed a higher tempo, and was highly popular at that time.");
+      } else {
+        $('#div-tempo-descr').html("Between 1962 and 1964 the tempo of songs did not change by a lot.");
+      }
 
   }
 
