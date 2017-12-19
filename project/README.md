@@ -64,3 +64,7 @@ Later on, we can fetch additional information from the whole data set.
 # Questions for TAa
 
 Is there a possibility to convert IDs from the dataset to Spotify URNs?
+
+
+# What did each group member did 
+**Max Premi** = Cluserting, Mapping to genre improving, Interactive Plot by genre, Some Data Cleaning, Analysis of Result for Feature Analysis, Text for DataStory
