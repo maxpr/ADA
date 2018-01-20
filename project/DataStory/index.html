@@ -1,89 +1,122 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>EPFL ADA - Evolution of Music</title>
+  <title>EPFL ADA - Evolution of Music</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.2.0/css/ion.rangeSlider.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.2.0/css/ion.rangeSlider.skinHTML5.min.css" />
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.2.0/css/ion.rangeSlider.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.2.0/css/ion.rangeSlider.skinHTML5.min.css" />
 
-    <!-- Custom styles for this template -->
-    <link href="main.css" rel="stylesheet">
-  </head>
+  <!-- Custom styles for this template -->
+  <link href="main.css" rel="stylesheet">
+</head>
 
-  <body>
-    <div class="blog-header">
-      <div class="container">
-        <h1 class="blog-title">Applied Data Analysis</h1>
-        <p class="lead blog-description">A course by EPFL</p>
-      </div>
-    </div>
-
+<body>
+  <div class="blog-header">
     <div class="container">
+      <h1 class="blog-title">Applied Data Analysis</h1>
+      <p class="lead blog-description">A course by EPFL</p>
+    </div>
+  </div>
 
-      <div class="row">
+  <div class="container">
 
-        <div class="col-sm-8 blog-main">
+    <div class="row">
 
-          <div class="blog-post">
-            <h2 class="blog-post-title">Evolution of Music</h2>
-            <p class="blog-post-meta">December 19, 2017 by <a href="#">Max Premi</a> and <a href="#">Maximilan Rünz</a></p>
+      <div class="col-sm-8 blog-main">
 
-            <p>The music world is constantly increasing with lot of songs published everyday from all over the world. Moreover, the world is becoming more connected and this helps to spread music popularity. </p>
-            <p> We want to understand how music features evolved in the last roughly 60 years, as music is a really important social factor. People express themselves, and lot of cultural events and customs are derived from it.
-              This change could help explain some movements influence, the creation of some music styles and what makes a song/genre popular.
-              We will use the dataset from MillionSongDB, coupled with some website such as The Echo Nest API (now Spotify) and musicbrainz.
+        <div class="blog-post">
+          <h2 class="blog-post-title">Evolution of Music</h2>
+          <p class="blog-post-meta">December 19, 2017 by <a href="#">Max Premi</a> and <a href="#">Maximilan Rünz</a></p>
+
+          <p>The universe of music is constantly growing. Thousands new songs are published each day all around the world. Moreover, the world is becoming more connected and this helps to spread music popularity. </p>
+            <p> We want to understand how music evolved in the last roughly 60 years, as music is an important social factor. People express themselves through music, and lot of cultural events and customs are derived from it. This popularity could help
+              to explain some movements influences and the creation of some music styles. We have used the dataset from <a href="https://labrosa.ee.columbia.edu/millionsong/">MillionSongDB</a> with 450.000 songs, coupled with data from websites such as <a href="http://the.echonest.com/">The Echo Nest</a> (now <a href="https://www.spotify.com/">Spotify</a>) and <a href="https://musicbrainz.org/">Musicbrainz</a>.
             </p>
             <hr>
 
-            <p>Music is a form of art, and a cultural activity that have been practiced since prehistoric time. Nowadays it is everywhere, and seems inseparable from our life-style, as even humming or hitting an object with your finger makes "music".
-The evolution of this field is thus a really intersting subject to study. It is linked to cultural movement in history, such as the 80's with hippies movement for example but also architecture (<a href="https://en.wikipedia.org/wiki/Baroque_music">Baroque</a>) or religion (<a href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach">Jean-Sébastien Bach</a> was indeed doing muisc link to religion). This can help us understand how music evolves with the time with how events and movement influence it, but also how music affects these different things.
+            <h2> Introduction </h2>
 
-It has also become a big industry, with the apparition of the term "commercial music", and interest more and more people, <a href="https://www.youtube.com/watch?v=lExW80sXsHs">for example this video</a>, that collected more than 100 millions views.
-In this study we will concentrate on music from the 20th century and beginning of 21th century, and we will try to awnser the following questions:
+            <p>Music is a form of art, and a cultural activity which has been practiced since prehistoric time. Nowadays it is everywhere. Music seems inseparable from our life-style, as even humming or hitting an object with your finger makes "music". The evolution
+              of this field is thus an interesting subject to study. It is linked to cultural movement in history, such as the 80's with hippie movement but also architecture (<a href="https://en.wikipedia.org/wiki/Baroque_music">Baroque</a>)
+              or religion (<a href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach">Jean-Sébastien Bach</a>). This can help us to understand how music evolves with the time, how events and epochs influence
+              it. Music has also become a big industry, with the apparition of the term "commercial music". More and more people are interested in music e.g. <a href="https://www.youtube.com/watch?v=lExW80sXsHs">this video</a>
+              with content based on music, has reached more than 100 million views. In this study we will concentrate on music from the 20th century and beginning of the 21th century. We asked ourselves the following questions:
 
-<ul>
-  <li>
-    How did music features change during the last 80 years, in terms of duration, style, or even rythm ?
-  </li>
-  <li>
-    What makes a Song popular a few years ago, what make one today, and is the formula for a popularity possible to elaborate ? (all in function of genre distribution and not hotness in features)
-  </li>
-</ul>
-We will try to awnser these with as much precision as possible in the following lines, while keeping in mind that evolution is a neutral term, and also that popularity is quite subjective.</p>
+              <ul>
+                <li>
+                  How did music change during the last 60 years? Which genres were popular when?
+                </li>
+                <li>
+                  How did features like, duration, style or rhythm change?
+                </li>
+                <li>
+                  How did genres change over time?
+                </li>
+              </ul>
+              We will try to answer these questions in this blog post, while keeping in mind that evolution is a neutral term, and that popularity is quite subjective.</p>
 
-            <h2>Evolution of Music in General</h2>
 
-            <p>We will concentrate in this section, in the evolution of music in general, meaning we did not do difference between genre of music yet. First we can introduce the first numbers. We had a total of 462546 songs at the beggining, and after cleaning (drop where they are to much undefined features or no year), we have aroud 220000 songs. The major features used are the following : the Tempo, Duration, Loudness, Terms, TermsFrequency and Termsweight.
+          <h2>Dataset</h2>
 
-Hotness was not used for song as too much of them had a 0 one. We thus tried to map popularity in function of the genre distribution through the years.
-For the evolution of music we had really good result matching historical events, such as the loudness increase, which is a known problem since the 90s. Also change in Tempo with also increase and decrease, and finally duration with high increase from 1950. These results are detailled in the following section with more analysis and explanations.
-The Terms with frequency were used to map song to Parent Genre. We did the mapping ourselves and we achieve an accuracy of 75% which is quite correct.
+          <p>
+            Before going into details, we will spend a few words on the background of this blog post:
+            The analyzed dataset consisted of roughly 460.000 Songs. After we cleaned the dataset, the remaining 220.000 songs were analyzed.
+            The most important features used in the analysis are the following : tempo, duration, loudness, hotness of Songs and genres and genre weight of artists.
+            Unfortunately, interesting features like energy and danceability were not usable from the dataset ( zero for each song ).
+            For other features like key and rhythm of songs it was not possible to draw meaningful conclusions.
+          </p>
 
-We also did a clustering (k-NN) of song to see if we could match the time period of a song, and we did get a result of 55% which is not that good. It is in the original work of the notebook, if you're interested in it.</p>
+          <p>
+            Presented increases and decreases in this blog post might deviate from the values presented in the charts.
+            The charts present the average features per year, while the change rates have been calculated using confident intervals to ensure correctness.
+          </p>
 
-            <h3>Evolution of Tempo</h3>
+          <h2>Evolution of Music in General</h2>
 
-            <p>Let's look at the Tempo evolution. We can clearly see that there has been an increase in the overall tempo since the 60s. With a little wave that converged to a value around 125. This will
-			be discribed step by step by using the slider.</p>
+          <p>
+            In this section, we will concentrate on the evolution of music in general, meaning we did differentiate genres yet.
+            The three most influenced features by time are tempo, loudness and duration.
+          </p>
 
-            <div id="div-tempo"> </div>
-            <input id="SliderTempo" type="text" />
-            <div id="div-tempo-descr"></div>
+          <h3>Evolution of Tempo</h3>
 
-            <br/>
+          <p>
+            For the tempo one can notice a seven BPM increase from 1960 to 1980. After 1980 the tempo drops by seven BPMs around 1992. In recent years one can notice a BPM increase of two BPM
+          </p>
 
-            <h3>Evolution of Loudness</h3>
+          <i>
+            Scroll through time to display are more detailed analysis!
+          </i>
 
-            <p>Here we do not need to explain it, we clearly see that the <b>Loudness</b> increased, but why is that and how did the time influence this ?
+          <div id="div-tempo"> </div>
+          <input id="SliderTempo" type="text" />
+          <div id="div-tempo-descr"></div>
 
-First <b>Loudness</b> is defined as <a href="https://en.wikipedia.org/wiki/Loudness">follow</a> : "That attribute of auditory sensation in terms of which sounds can be ordered on a scale extending from quiet to loud.", or more theoritically, it is the subjective perception of <a href="https://en.wikipedia.org/wiki/Sound_pressure">sound pressure</a> (which is is the local pressure deviation from the ambient (average, or equilibrium) atmospheric pressure, caused by a sound wave.)
+          <br/>
+
+          <h3>Evolution of Loudness</h3>
+
+          <p>
+            <b>Loudness</b> is defined as <a href="https://en.wikipedia.org/wiki/Loudness">follows</a> : "That
+            attribute of auditory sensation in terms of which sounds can be ordered on a scale extending from quiet to loud.", or more theoretically, it is the subjective perception of <a href="https://en.wikipedia.org/wiki/Sound_pressure">sound pressure</a>.
+          </p>
+
+          <p>
+            One can notice a steep increase of loudness of 5 dB.
+            The steepest point of the curve is in the 90s, during the <a href="https://en.wikipedia.org/wiki/Loudness_war"><b>Loudness War</b></a>
+          </p>
+
+          <i>
+            Scroll through time to display are more detailed analysis!
+          </i>
 
             <div id="div-loudness"> </div>
             <input id="SliderLoudness" type="text" />
@@ -93,99 +126,124 @@ First <b>Loudness</b> is defined as <a href="https://en.wikipedia.org/wiki/Loudn
 
             <h3>Evolution of Duration</h3>
 
-            <p>The analysis of songDuration will be done in 3 steps: From the 60s to the 80s, then the 80s to the 2000s and finally from the 2000s to nowadays.
-First we will discus the gap between 1960 (3 minutes average) to 1980 (3 minutes 45 average). But they have been a great increased on a short period, and this duration has been around the same since this period.
-            <div id="div-duration"> </div>
-            <input id="SliderDuration" type="text" />
-            <div id="div-duration-descr"></div>
+            <p>
+              For the duration of songs one can notice a very steep increase in the 60s and 70s.
+              During those years the song Duration increased by almost one minute.
+              After the 70s the duration kept increasing until the 2000s, when the duration started to decrease.
+            </p>
 
-            <br/>
+            <i>
+              Scroll through time to display are more detailed analysis!
+            </i>
 
+              <div id="div-duration"> </div>
+              <input id="SliderDuration" type="text" />
+              <div id="div-duration-descr"></div>
 
-            <h2>Evolution of Genre Population</h2>
-
-            <p>We will talk here about the genre Distribution evolution.
-
-We can clearly see the trending genre moving with the time.
-
-So this is the evolution of music analyzed in function of the number of songs labelled by genre, we will now look at the features changes by genre.
-This evolution can be correlated to the popularity of a genre, as the more % it is, the more popular it is supposed to be (else it would not have been released)
-
-Also the Genre matching was done ourselves to reduce main genre to 14 genres. We used a Json found a website to reduce all the different tags to 28 genres, that we also reduce to the main 14 genres. The original tags were very variated and we treat almost 350 subgenres.</p>
-            <div id="div-genres"> </div>
-
-            <div id="div-genres-descr" ></div>
-            <div id="div-genres-time"> </div>
-            <input id="SliderGenres" type="text" />
+              <br/>
 
 
-            <br/>
-			<h3>What we can infer</h3>
-			<p>From this we can understand the popularity of some old time such as <b>Jazz, Blues or Folk</b> has greatly reduce since the begining of the 20 th century. This is due to the apparition of new genre based on this previous one.
-			Also cultural movement or apparition of some famous people increased the popularity of a genre with the example of Bob Marley for the <b>Reggae</b> or the rise of <b>Metal/ Heavy-Metal</b> in the late 70s. And finally the technological advance have helped some genre such as <b>Electronic</b> to spread faster and take 
+              <h2>Evolution of Genre Populatity</h2>
+
+              <p>Starting from this section we will consider the evolution of music based on different genres.
+                The chart shows the portion of songs released per year per genre. The Genre matching was done ourselves to reduce several hundred genres to 14 genres.</p>
+                 We can clearly see the trending genres moving with the time.</p>
+
+               <i>
+                 Hover over the lines in the chart to display descriptions for each genre.
+               </i>
+              <div id="div-genres"> </div>
+
+              <div id="div-genres-descr"></div>
+              <div id="div-genres-time"> </div>
+              <input id="SliderGenres" type="text" />
+
+
+              <br/>
+			<p>From this we can understand the popularity of some old time such as <b>Jazz, Blues or Folk</b> has greatly reduce since the beginning of the 20th century. This is due to the apparition of new genre based on this previous one.
+			Also, cultural movement or apparition of some famous people increased the popularity of a genre with the example of Bob Marley for the <b>Reggae</b> or the rise of <b>Metal/ Heavy-Metal</b> in the late 70s. And finally, the technological advance has helped some genre such as <b>Electronic</b> to spread faster and take
 			a place in this genre population.</p>
-			
-            <h2>Evolution of specific Genres</h2>
-            <h3>Evolution of Loudness</h3>
-			<p>The evolution of Loudness by genre confort our observation of Loudness War shown in the previous plots.
-			Indeed there is a clear augmentation of loudness, with a clear higher change for metal, that might be due to the
-			use of distorsion and other procedure that increase the song force. We can however see 3 genres that are less affected which are
-			<b>Folk,Blues and Jazz</b>. This should be due to the accoustic nature of these genre as it does not use as much electronical material as the other genres.</p>
-            <h4>Mean</h4>
-            <div id="div-genres-loudness-Mean"> </div>
-			<p>We can see that the variation of loudness clearly increased linearly, for all genres. One interesting fact is how they were spread from each other at the beginning, but then joined in 1985, and spread again in the beginning of the loudness War.
-			We have not found matching events or information for this regrouping, but there are some interesting fact to notice. <b>Downtempo and Electronic</b> has a really linear increased, mostly due to their close relationship with technologic discovery. And also, <b>Metal and Reggae</b> were the one with the lowest variation
-			, it might be linked to the fact that it <b>Metal</b> appeared later than the other genre and used a high Loudness since the beginning and <b>Reggae</b> used maybe less this loudness increased.</p>
-            <h4>Variation (Maximum - Minimum)</h4>
-            <div id="div-genres-loudness-MinMax"> </div>
-            <h3>Evolution of Tempo</h3>
-			<p>So if we study the evolution of Tempo by genre, most of them actually the same trend as the global one we described earlier, with some exceptions.
-			Indeed <b>Jazz, Folk and Blues</b> music have the same shape of curve but shifted to lower BPM after the first raise. This is due to the slow characteristic of these genre
-			which are typically accoustic. It's indeed amazing how they almost perfectly match
 
-			The <b>Reggae</b> has a trend to go a little higher in term of tempo, this is maybe due to the apparition of the Ska subgenre. The curve goes up to 128 instead of 125 and stay a little higher than the other genre.
+              <h2>Evolution of specific Genres</h2>
 
-			As we have seen previously, <b>Metal</b> is a real special genre with the tendancy to never match the other genres. So it's curve is like the <b>Reggae</b> one, but shifted even higher with a BPm that went to 132 and finish at almost 130
+              <p>
+                In this section we will apply the gained knowledge of genres to the already evaluated features.
+              </p>
 
-			</p>
-            <h4>Mean</h4>
-            <div id="div-genres-tempo-Mean"> </div>
-			<p>So here, for all genre we clearly see and increasing trend, with waves.
-			The analysis give almost the same result as the previous one on Loudness.</p>
-            <h4>Variation (Maximum - Minimum)</h4>
-            <div id="div-genres-tempo-MinMax"> </div>
+              <h3>Evolution of Loudness</h3>
+              <p>The evolution of genre loudness clarifies our observation of Loudness War shown in the previous plots. Indeed, there is a clear augmentation of loudness, with a higher change for metal, that might be due to the use of distortion and
+                other procedure that increase the song force. We can however see 3 genres that are less affected which are
+                <b>Folk, Blues and Jazz</b>. This should be due to the acoustic nature of these genre as it does not use as much electronical material as the other genres.</p>
+              <h4>Mean</h4>
+              <div id="div-genres-loudness-Mean"> </div>
 
-          </div><!-- /.blog-post -->
+              <h4>Variation (Maximum - Minimum)</h4>
+              <p>
+                We have not found matching events or information for this regrouping, but there is some interesting fact to notice. <b>Downtempo and Electronic</b> has a linear increased, mostly due to their close relationship with technologic discovery. And, <b>Metal and Reggae</b> were the one with the lowest variation
+                , it might be linked to the fact that it <b>Metal</b> appeared later than the other genre and used a high Loudness since the beginning and <b>Reggae</b> used maybe less this loudness increased.</p>
+              </p>
+              <div id="div-genres-loudness-MinMax"> </div>
+              <h3>Evolution of Tempo</h3>
+              <p>So if we study the evolution of Tempo by genre, most of them the same trend as the average music, with some exceptions. Indeed <b>Jazz, Folk and Blues</b> music has the same shape of curve but shifted to lower
+                BPM after the first maximum. This is due to the slow characteristic of these genre which are typically acoustic. It's indeed amazing how they almost perfectly match the <b>Reggae</b> has a trend to go a little higher in term of tempo, this
+                is maybe due to the apparition of the Ska subgenre. The curve goes up to 128 instead of 125 and stay a little higher than the other genre. As we have seen previously, <b>Metal</b> is a real special genre with the tendency to never match
+                the other genres. So, it's curve is like the <b>Reggae</b> one, but shifted even higher with a BPM that went to 132 and finish at almost 130
 
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 offset-sm-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Insert info about us and course</p>
-          </div>
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
+              </p>
+              <h4>Mean</h4>
+              <div id="div-genres-tempo-Mean"> </div>
+              <p>So here, for all genre we clearly see and increasing trend, with waves. </p>
+			The analysis gives almost the same result as the previous one on Loudness.</p>
 
 
-    <!-- Bootstrap core JavaScript
+              <h2>Conclusion</h2>
+
+              <p>
+                Our analysis has shown that independant of the genre, the tempo, loudness and duration of songs increased.
+                We were able to explain the changes of features by  e.g popularity changes of music genres or technological innovation.
+
+                Furthermore, we were able to infer the genre popularity over time from the dataset.
+                And finally, we identified noticeable differences of e.g. the song tempo evolution of different genres.
+              </p>
+
+        </div>
+
+        <!-- /.blog-post -->
+
+      </div>
+      <!-- /.blog-main -->
+
+      <div class="col-sm-3 offset-sm-1 blog-sidebar">
+        <div class="sidebar-module sidebar-module-inset">
+          <h4>About</h4>
+          <p>Insert info about us and course</p>
+        </div>
+      </div>
+      <!-- /.blog-sidebar -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <footer class="blog-footer">
+    <p>
+      <a href="#">Back to top</a>
+    </p>
+  </footer>
+
+
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.2.0/js/ion.rangeSlider.min.js"></script>
-    <script src="main.js"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.2.0/js/ion.rangeSlider.min.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
